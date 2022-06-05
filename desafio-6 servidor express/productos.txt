@@ -1,0 +1,21 @@
+[
+	{
+		"title": "calculador",
+		"price": 2000,
+		"thumbnail": "chttps://www.google.com/url?sa=i&url=https%3A%2F%2Fsimple.ripley.cl%2Fcalculadora-casio-mx-12b-bk-w-dc-mpm00006342126&psig=AOvVaw14mA_lyD-SRjpnx4EbsR-R&ust=1622070679994000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjfsaf65fACFQAAAAAdAAAAABAD",
+		"id": 1
+	},
+	{
+		"title": "PC",
+		"price": 3000,
+		"thumbnail": "chttps://www.google.com/url?sa=i&url=https%3A%2F%2Fsimple.ripley.cl%2Fcalculadora-casio-mx-12b-bk-w-dc-mpm00006342126&psig=AOvVaw14mA_lyD-SRjpnx4EbsR-R&ust=1622070679994000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjfsaf65fACFQAAAAAdAAAAABAD",
+		"id": 2
+	}
+	,
+	{
+		"title": "Caja",
+		"price": 4000,
+		"thumbnail": "chttps://www.google.com/url?sa=i&url=https%3A%2F%2Fsimple.ripley.cl%2Fcalculadora-casio-mx-12b-bk-w-dc-mpm00006342126&psig=AOvVaw14mA_lyD-SRjpnx4EbsR-R&ust=1622070679994000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjfsaf65fACFQAAAAAdAAAAABAD",
+		"id": 3
+	}
+]
