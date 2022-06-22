@@ -18,5 +18,6 @@
   "homepage": "https://github.com/JeremiasProgJr/Desafios-Backend-Coderhouse#readme",
   "dependencies": {
     "express": "^4.18.1"
-  }
+  },
+  "devDependencies": {}
 }
