@@ -1,0 +1,22 @@
+extends index
+
+block partial 
+    body    
+        div(class="container mt-3")
+            div(class="jumbotron")
+                h1 formulario
+                br
+                form(action="/api/productos/guardar" method='POST')
+                    div(class="form-group")
+                        label(for="nombre") Nombre
+                        input(type="text" class="form-control" name="nombre" id="nombre")
+                    div(class="form-group")
+                        label(for="precio") Precio
+                        input(type="text" class="form-control"  name="precio" id="precio")
+                    div(class="form-group")
+                        label(for="thumbnail") Foto Url 
+                        input(type="text" class="form-control" name="thumbnail" id="thumbnail")
+                    button(class="btn btn-success mt-3 mb-5") Enviar
+
+
+                    
