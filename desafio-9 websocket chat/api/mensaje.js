@@ -9,6 +9,7 @@ class Mensaje{
             //return this.mensajes
             try {
                 const data = this.#fs.readFileSync(`public/mensajes.txt`,'utf-8')
+                console.log(data)
                 return  JSON.parse(data)
             } catch (error) {
                 throw new Error("hay un problema al leer")  

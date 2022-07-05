@@ -21,13 +21,16 @@ io.on('connection', async socket => {
 
     socket.on('nuevo-mensaje', mensaje =>{
         mensajes.guardar(mensaje).then(contenido => {
-            io.sockets.emit('mensajes', mensajes.leer());
-            console.log(mensaje)
+
+            io.sockets.emit('mensajes', contenido);
+            
         }).catch(error => {console.log(error)})
         
     });
 
 });
+
+
 
 
 const route_productos = require('./routers/producto');
