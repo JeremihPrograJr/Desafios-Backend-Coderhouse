@@ -5,10 +5,10 @@ class Mensaje{
             this.ruta = 'mensajes'
         }
 
-         leer(){
+         async leer(){
             //return this.mensajes
             try {
-                const data = this.#fs.readFileSync(`public/mensajes.txt`,'utf-8')
+                const data = await this.#fs.promises.readFile(`public/mensajes.txt`,'utf-8')
                 console.log(data)
                 return  JSON.parse(data)
             } catch (error) {
@@ -24,7 +24,7 @@ class Mensaje{
             let arrayMensajes=[]
         try {
             //let contenido =  await this.#fs.promises.readFile(`./public/${this.ruta}.txt`,'utf-8')
-            let contenido =  await this.#fs.promises.readFile(`public/mensajes.txt`,'utf-8')
+            let contenido =  await this.#fs.promises.readFile(`./public/mensajes.txt`,'utf-8')
                 if(contenido){ 
                      objeto = JSON.parse(contenido)
                      for(let i =0; i < objeto.length;i++){
