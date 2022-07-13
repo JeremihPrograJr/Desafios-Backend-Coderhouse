@@ -7,11 +7,20 @@ class Persistencia_carrito_txt{
     }
 
     async guardar(carrito){  
-
+        let carritos=[]
+        let informacion;
         try {
            let contenido =  await this.#fs.promises.readFile(__dirname + `/carro.txt`,'utf-8')
                 if(contenido){ 
-                    await  this.#fs.promises.writeFile(__dirname + `/carro.txt`,JSON.stringify(carrito,null,'\t'))
+                    
+
+                    carritos= JSON.parse(contenido)
+
+                    carritos.push(carrito)
+
+                    await  this.#fs.promises.writeFile(__dirname + `/carro.txt`,JSON.stringify(carritos,null,'\t'))
+
+                return true;
                 }
                 return true;
              } catch (error) {
@@ -19,6 +28,30 @@ class Persistencia_carrito_txt{
          }
          
     } 
+
+    
+    async guardarCarroYproducto(id_carrito, producto){  
+        let carritos=[]
+        let informacion;
+        try {
+           let contenido =  await this.#fs.promises.readFile(__dirname + `/carro.txt`,'utf-8')
+                if(contenido){ 
+                    informacion= JSON.parse(contenido)
+
+                    carritos.push(carrito)
+
+                    await  this.#fs.promises.writeFile(__dirname + `/carro.txt`,JSON.stringify(carritos,null,'\t'))
+                     return true;
+                }
+                return true;
+             } catch (error) {
+            throw error.message
+         }
+         
+    } 
+    
+
+
     
     leer(){
         try {

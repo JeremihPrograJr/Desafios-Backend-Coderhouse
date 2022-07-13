@@ -5,11 +5,16 @@ class Carrito {
     constructor(){
     }
 
-    async guardar(id_producto){
-       let guardarProducto= await persistencia_memoria_carrito.guardar(id_producto)
+    async guardar(carrito){
+       let guardarProducto= await persistencia_memoria_carrito.guardar(carrito)
 
        return guardarProducto
     }
+    async guardarCarroYproducto(carrito_id, id_producto){
+        let guardarProducto= await persistencia_memoria_carrito.guardarCarroYproducto(carrito_id,id_producto)
+ 
+        return guardarProducto
+     }
 
     leer(){
         return persistencia_memoria_carrito.leer();

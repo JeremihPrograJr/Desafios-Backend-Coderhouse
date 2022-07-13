@@ -17,10 +17,11 @@ class Carrito{
             }
                 this.carrito_productos.push(producto_resultado)
                 this.carrito ={
-                    id:this.id,
+                    id:this.id ,
                     timestamp : new Date().toLocaleString(),
                     productos: this.carrito_productos
                 }
+                this.id = this.id +1
 
                 await  persistencia_carrito_txt.guardar(this.carrito).then((contenido) => {console.log(contenido)}).catch(err => console.log(err))
                 
@@ -34,6 +35,37 @@ class Carrito{
         }
        
     }
+
+
+    async guardarCarroYproducto(id_carrito,id_producto){
+        try {
+            let producto_resultado =  await listaproductos.buscarProductoId(id_producto)
+            if(producto_resultado.error){
+                    return  producto_resultado;
+            }
+                this.carrito_productos.push(producto_resultado)
+                this.carrito ={
+                    id:id_carrito,
+                    timestamp : new Date().toLocaleString(),
+                    productos: this.carrito_productos
+                }
+               
+
+                await  persistencia_carrito_txt.guardar(this.carrito).then((contenido) => {console.log(contenido)}).catch(err => console.log(err))
+                
+                return this.carrito
+            
+        
+
+        } catch (error) {
+            return {error:"existe un error en guardar de memoria_carrito"}
+
+        }
+       
+    }
+
+
+
 
     leer(){
         try {
