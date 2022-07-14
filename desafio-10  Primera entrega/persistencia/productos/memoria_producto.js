@@ -30,7 +30,7 @@ class Memoria_producto {
     leer(){
         
         try {
-            console.log(this.productos)
+            console.log("Cantidad de productos " +this.productos)
             return (this.productos.length ===0)? {error:"No hay productos cargados"}: this.productos
         } catch (error) {
             return console.log(`existe problema al leer:${error.message}`)

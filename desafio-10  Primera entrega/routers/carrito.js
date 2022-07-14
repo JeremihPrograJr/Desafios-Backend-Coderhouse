@@ -3,32 +3,35 @@ const router = express.Router()
 const carrito = require('../api/carrito')
 const productos = require('../api/producto')
 
-router.post('/carrito/agregar/:id' , async (req,res) => {
-        console.log(req.params.id)
-        let carritos = await carrito.guardar(parseInt(req.params.id))
+router.post('/carrito' , async (req,res) => {
+        
+        let carritos = await carrito.guardar({productos:[]})
         res.json(carritos)
 });
    
 
 
-router.post('/carrito/:id/:idProductos' , async (req,res) => {
+router.post('/carrito/:id/producto' , async (req,res) => {
         
-        let carritoId  = req.params.id
-        let productoId = parseInt(req.params.idProductos)
-  
-        let resultadoProducto = productos.buscarProductoId(productoId)
-
-        //console.log(resultadoProducto)
-        //console.log(req.params.idProductos)
-        let carritos = await carrito.guardarCarroYproducto(parseInt(carritoId),productoId)
+        let carritoId  = parseInt(req.params.id)
+        let id_producto = req.body
+        console.log("Recibiendo id carro " + carritoId)
+        console.log("Recibiendo id producto "  + id_producto.id_producto)
+        let producto = await productos.leer()
+        let producto_id = producto.find((p) => p.id == parseInt( id_producto.id_producto) )
+        console.log("Producto encontrado " )
+       let carritos = await carrito.guardarCarroYproducto(carritoId,producto_id)
         res.json(
-                carrito
+                producto_id
         )
 });
 
-router.get ('/carrito/listar', (req,res) => {
+router.get ('/carrito/:id/productos', async (req,res) => {
        //res.json(carrito.leer(parseInt(req.params.id)))
-       res.json(carrito.leer())
+       const { id } = req.params;
+       let data = await carrito.leer()
+       let carritoId = data.find((e) => e.id == id)
+       res.json(carritoId.productos)
 });
 
 router.delete ('/carrito/borrar/:id', (req,res) => {

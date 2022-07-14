@@ -6,27 +6,32 @@ class Persistencia_producto_txt {
         }
 
         async guardar(producto){  
-            let array_productos=[]
+            
         try {
-           let contenido =  await this.#fs.promises.readFile(__dirname + `/producto.txt`,'utf-8')
-                if(contenido){ 
-                    array_productos= JSON.parse(contenido)
-                    array_productos.push(producto)
-                    await  this.#fs.promises.writeFile(__dirname + `/producto.txt`,JSON.stringify(array_productos,null,'\t'))
+           let contenido =  await this.leer()
+           producto.id =  contenido.length === 0 ? 1 : contenido[contenido.length - 1].id + 1;
+           producto.timestamp =  new Date().toLocaleString() 
+          
+           contenido.push(producto)
+
+            await  this.#fs.promises.writeFile(__dirname + `/producto.txt`,JSON.stringify(contenido,null,'\t'))
                 return true;
-                }
+                
              } catch (error) {
             throw error
          }
     } 
 
     
-        leer(){
+       async leer(){
             try {
-                const data = this.#fs.readFileSync(`./productos.txt`,'utf-8')
+                const data =  await this.#fs.promises.readFile(__dirname + `/producto.txt`,'utf-8')
+               
                 return  JSON.parse(data)
             } catch (error) {
-                throw error
+                await this.#fs.promises.writeFile(__dirname + `/producto.txt`,'utf-8')
+                return []
+             
             }
     
         }
