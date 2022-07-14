@@ -25,22 +25,31 @@ router.post('/productos/guardar',admin, async  (req,res) => {
         res.json(p)
 });
 
-router.get('/productos/listar',admin, async ( req,res) => {
+router.get('/productos/listar', async ( req,res) => {
         let pro = await productos.leer()
         res.json(pro)
 });
 
-router.get('/productos/listar/:id',admin, (req,res) => {
-        res.json(productos.buscarProductoId(parseInt(req.params.id)))
+router.get('/productos/listar/:id',admin, async (req,res) => {
+        let id = req.params.id
+        let producto = await productos.buscarProductoId(id)
+        res.json(producto)
 
 });
 
-router.put('/productos/actualizar/:id',admin, (req,res) => {
-        res.json(productos.actualizar(parseInt(req.params.id),req.body))
+router.put('/productos/actualizar/:id/producto',admin, async (req,res) => {
+        let id = req.params.id
+        let producto= req.body
+        console.log("Desde router" + id)
+        console.log(producto)
+        let respuesta = await productos.ActualizarProducto(id,producto)
+        res.json(respuesta)
 });
 
-router.delete('/productos/borrar/:id',admin,(req,res) => {
-        res.json(productos.borrar(parseInt(req.params.id)))
+router.delete('/productos/borrar/:id',admin,async (req,res) => {
+        let id = req.params.id
+        let producto = await productos.eliminarProducto(id)
+        res.json(producto)
 });
 
 

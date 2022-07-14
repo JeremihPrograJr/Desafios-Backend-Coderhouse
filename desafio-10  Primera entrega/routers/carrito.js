@@ -1,6 +1,6 @@
-const express = require('express')
+const express = require('express');
+const carrito = require('../api/carrito');
 const router = express.Router()
-const carrito = require('../api/carrito')
 const productos = require('../api/producto')
 
 //Crear carrito
@@ -18,18 +18,20 @@ router.delete('/carrito/:id' , async (req,res) => {
 });
    
 
-router.post('/carrito/:id/producto' , async (req,res) => {
+router.post('/carrito/:id/productos' , async (req,res) => {
         
-        let carritoId  = parseInt(req.params.id)
-        let id_producto = req.body
-        console.log("Recibiendo id carro " + carritoId)
-        console.log("Recibiendo id producto "  + id_producto.id_producto)
-        let producto = await productos.leer()
-        let producto_id = producto.find((p) => p.id == parseInt( id_producto.id_producto) )
-        console.log("Producto encontrado " )
-       let carritos = await carrito.guardarCarroYproducto(carritoId,producto_id)
+        let carritoId  = req.params.id
+        let  id_producto = req.body.id_producto
+        
+        let producto = await productos.buscarProductoId(id_producto)
+         if (!producto){
+                throw {"error":"No se encuentro el  producto"}
+         }
+
+        
+       let carritos = await carrito.guardarCarroYproducto(carritoId,producto)
         res.json(
-                carritoId
+                carritos
         )
 });
 
@@ -41,8 +43,37 @@ router.get ('/carrito/:id/productos', async (req,res) => {
        res.json(carritoId.productos)
 });
 
+
+router.delete('/carrito/:id/productos/:id_prod' , async (req,res) => {
+        let id_carrito = req.params.id
+        let id_producto = req.params.id_prod
+        let DataCarrito = await carrito.buscarCarroId(id_carrito)
+
+        if (!DataCarrito ){
+                throw {"error" : "No se puede encontrar el carrito"}
+        }
+
+        let dataProducto = DataCarrito.productos.find((el)=> el.id ==id_producto)
+        if (!dataProducto ){
+                throw {"error " :"No se puede encontrar el producto"}
+        }
+
+        
+        DataCarrito.productos = DataCarrito.productos.filter((el)=> el.id != id_producto)
+
+
+        console.log("id carro " & id_carrito)
+        console.log(DataCarrito)
+        let respuesta = await carrito.actualizarCarro(id_carrito,DataCarrito)
+
+        //let eliminar = await carrito.eliminarCarrito(id)
+        res.json(respuesta)
+});
+
+
 router.delete ('/carrito/borrar/:id', (req,res) => {
         res.json(carrito.borrar(parseInt(req.params.id)))
 });
+
 
 module.exports = router

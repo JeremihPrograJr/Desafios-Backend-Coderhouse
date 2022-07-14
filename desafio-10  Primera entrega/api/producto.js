@@ -14,16 +14,19 @@ class Producto {
            return  le
     }
 
-    buscarProductoId(id){
-           return persistencia_producto_txt.buscarProductoId(id)
+    async buscarProductoId(id){
+       let respuesta= await persistencia_producto_txt.buscarProductoId(id)
+           return respuesta
     }
     
-    actualizar(id,producto){
-           return persistencia_producto_txt.actualizar(id,producto)
+    async eliminarProducto(id){
+       let respuesta= await persistencia_producto_txt.EliminarProductoPorId(id)
+              return respuesta
     }
+    async ActualizarProducto(id,producto){
 
-    borrar(id){
-           return persistencia_producto_txt.borrar(id);
+       let respuesta= await persistencia_producto_txt.ActualizarProducto(id,producto)
+       return respuesta
     }
 
 }

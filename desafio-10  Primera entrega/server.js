@@ -34,6 +34,6 @@ const server = app.listen(puerto, () => {
         console.log(`Conectandose al http://localhost:${puerto} `)
 })
 
-server.on('error' , ()=> {
+server.on('error' , (error)=> {
         console.log('Error en el servidor :', error)
 });

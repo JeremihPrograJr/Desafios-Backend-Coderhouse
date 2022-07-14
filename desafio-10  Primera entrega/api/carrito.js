@@ -1,4 +1,5 @@
 const persistencia_memoria_text =  require('../persistencia/carro/persistencia_carro_txt')
+const producto = require('./producto')
 
 class Carrito {
 
@@ -11,8 +12,8 @@ class Carrito {
 
        return guardarProducto
     }
-    async guardarCarroYproducto(carrito_id, id_producto){
-        let guardarProducto= await persistencia_memoria_text.guardarCarroYproducto(carrito_id,id_producto)
+    async guardarCarroYproducto(carrito_id, producto){
+        let guardarProducto= await persistencia_memoria_text.guardarCarroYproducto(carrito_id,producto)
  
         return guardarProducto
      }
@@ -21,9 +22,17 @@ class Carrito {
         let data = await persistencia_memoria_text.leer();
         return  data
     }   
+    async buscarCarroId(id){
+        let data = await persistencia_memoria_text.buscarCarroId(id);
+        return  data
+    }   
 
     async eliminarCarrito(id){
         let respuesta = await persistencia_memoria_text.eliminarCarrito(id);
+        return  respuesta
+    }
+    async actualizarCarro(id,carro){
+        let respuesta = await persistencia_memoria_text.ActualizarCarro(id,carro);
         return  respuesta
     }
 
