@@ -1,4 +1,4 @@
-const memoria_producto = require('./memoria_producto')
+
 
 class Persistencia_producto_txt {
     #fs =require('fs')
@@ -35,6 +35,8 @@ class Persistencia_producto_txt {
             }
     
         }
+
+       
     
     
     

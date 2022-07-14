@@ -3,13 +3,20 @@ const router = express.Router()
 const carrito = require('../api/carrito')
 const productos = require('../api/producto')
 
+//Crear carrito
 router.post('/carrito' , async (req,res) => {
         
         let carritos = await carrito.guardar({productos:[]})
         res.json(carritos)
 });
    
-
+//eliminar carrito 
+router.delete('/carrito/:id' , async (req,res) => {
+        let id = parseInt(req.params.id)
+        let eliminar = await carrito.eliminarCarrito(id)
+        res.json(eliminar)
+});
+   
 
 router.post('/carrito/:id/producto' , async (req,res) => {
         
@@ -22,7 +29,7 @@ router.post('/carrito/:id/producto' , async (req,res) => {
         console.log("Producto encontrado " )
        let carritos = await carrito.guardarCarroYproducto(carritoId,producto_id)
         res.json(
-                producto_id
+                carritoId
         )
 });
 

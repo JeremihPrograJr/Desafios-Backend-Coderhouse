@@ -1,5 +1,5 @@
-const persistencia_memoria_carrito= require('../persistencia/carro/memoria_carro')
 const persistencia_memoria_text =  require('../persistencia/carro/persistencia_carro_txt')
+
 class Carrito {
 
     constructor(){
@@ -22,8 +22,9 @@ class Carrito {
         return  data
     }   
 
-    borrar(id){
-        return persistencia_memoria_carrito.borrar(id)
+    async eliminarCarrito(id){
+        let respuesta = await persistencia_memoria_text.eliminarCarrito(id);
+        return  respuesta
     }
 
 }
