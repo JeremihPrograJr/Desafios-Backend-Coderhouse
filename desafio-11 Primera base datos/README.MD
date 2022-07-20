@@ -5,7 +5,7 @@ Para  inciar:
 * npm init
 
 
-## Elegir el tipo de base de datos
+## Elegir la base de datos
 
 1. Carpeta Config
 
