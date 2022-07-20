@@ -12,10 +12,10 @@ const mysql = {
 const sqlite3 = {
     client: 'sqlite3',
     connection: {
-        filename:__dirname + '/../db/mydb.sqlite'
+        filename:__dirname + '/../db/eccomerce.sqlite'
     },
     useNullAsDefault: true
 }
 
 //Aca exportamos la conexion que queremos ocupar
-module.exports = sqlite3;
+module.exports = mysql;

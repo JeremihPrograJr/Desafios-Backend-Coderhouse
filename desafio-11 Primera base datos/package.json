@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "drop-table":"node ../migration/dropDatatables.js",
-    "table-mensajes":" node ../migration/migration_mensajes.js",
-    "table-productos":" node ../migration/migration_producto.js"
+    "drop-table":"node ./migration/dropDatatables.js",
+    "table-mensajes":"node ./migration/migration_mensajes.js",
+    "table-productos":"node ./migration/migration_productos.js"
   },
   "author": "",
   "license": "ISC",
