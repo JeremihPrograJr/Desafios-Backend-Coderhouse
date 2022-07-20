@@ -4,9 +4,14 @@ Para  inciar:
 
 npm init
 
-npm run drop-table
-npm run table-mensajes
-npm run table-productos 
+
+## Creacion De tablas usando NPM RUN
+
+1. npm run drop-table
+
+2. npm run table-mensajes
+
+3. npm run table-productos 
 
 
 ## Rutas.
