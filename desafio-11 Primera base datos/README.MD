@@ -9,9 +9,9 @@ npm run table-mensajes
 npm run table-productos 
 
 
-##Rutas.
+#Rutas.
 
-##Mensajes
+#Mensajes
 1.Guardar: http://localhost:8080/api/mensajes/guardar
 
 2.Listar: http://localhost:8080/api/mensajes/listar
@@ -24,9 +24,13 @@ npm run table-productos
 
 ##Productos
 1.Guardar: http://localhost:8080/api/productos/guardar
+
 2.Listar: http://localhost:8080/api/productos/listar
+
 3.Listar por Id: http://localhost:8080/api/productos/listar/:id
+
 4.Actualizar: http://localhost:8080/api/productos/actualizar/:id
+
 5.Borrar: http://localhost:8080/api/productos/borrar/:id
 
 
