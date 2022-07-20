@@ -57,9 +57,15 @@ router.put('/productos/actualizar/:id', async (req,res) => {
 
 router.delete('/productos/borrar/:id',(req,res) => {
 
+    try {
         let id = parseInt(req.params.id)
         let borrar = productos.borrar(id)
         res.send(borrar)
+
+    } catch (error) {
+            res.status(500).send(error);
+        }
+     
 })
 
 
