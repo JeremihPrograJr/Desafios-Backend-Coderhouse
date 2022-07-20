@@ -12,9 +12,9 @@ npm run table-productos
 Rutas.
 
 Mensajes
- http://localhost:8080/api/mensajes/guardar
- http://localhost:8080/api/mensajes/listar
- http://localhost:8080/api/mensajes/listar/:id
+ Guardar: http://localhost:8080/api/mensajes/guardar
+ Listar: http://localhost:8080/api/mensajes/listar
+ Listar por Id: http://localhost:8080/api/mensajes/listar/:id
  http://localhost:8080/api/mensajes/actualizar/:id
  http://localhost:8080/api/mensajes/borrar/:id
 
