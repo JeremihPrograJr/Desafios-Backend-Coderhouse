@@ -12,12 +12,15 @@ npm run table-productos
 Rutas.
 
 Mensajes
-1. Get a free API Key at [https://example.com](https://example.com)
- Guardar: http://localhost:8080/api/mensajes/guardar
- Listar: http://localhost:8080/api/mensajes/listar
- Listar por Id: http://localhost:8080/api/mensajes/listar/:id
- http://localhost:8080/api/mensajes/actualizar/:id
- http://localhost:8080/api/mensajes/borrar/:id
+1.Guardar: http://localhost:8080/api/mensajes/guardar
+
+2.Listar: http://localhost:8080/api/mensajes/listar
+
+3.Listar por Id: http://localhost:8080/api/mensajes/listar/:id
+
+4.Actualizar: http://localhost:8080/api/mensajes/actualizar/:id
+
+5.Borrar: http://localhost:8080/api/mensajes/borrar/:id
 
 Productos
 http://localhost:8080/api/productos/guardar
