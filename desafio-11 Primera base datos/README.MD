@@ -5,6 +5,15 @@ Para  inciar:
 * npm init
 
 
+## Elegir el tipo de base de datos
+
+1. Carpeta Config
+
+2. Editar database.js
+
+3. Elegir la base de datos (mysql o sqlite3)
+
+
 ## Creacion De tablas usando NPM RUN
 
 1. npm run drop-table
