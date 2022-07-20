@@ -2,7 +2,7 @@
 
 Para  inciar:
 
-npm init
+*** npm init
 
 
 ## Creacion De tablas usando NPM RUN
