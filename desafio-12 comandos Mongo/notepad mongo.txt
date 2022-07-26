@@ -1,0 +1,81 @@
+
+use ecommerce
+
+db.productos.insertMany(
+[
+{"nombre": "calculadora","descripcion": "nada","codigo": "3","foto":"3://img.icons8.com/ios/452/calculator--v1.png","precio": 120},
+{"nombre": "tijera","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 580},
+{"nombre": "cpu","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 900},
+{"nombre": "computadora","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 1280},
+{"nombre": "lapiz","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 1700},
+{"nombre": "goma","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 2300},
+{"nombre": "cuaderno","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 2860},
+{"nombre": "papel","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 3350},
+{"nombre": "celular","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 4320},
+{"nombre": "carcasa","descripcion": "nada","codigo": "3","foto": "3://img.icons8.com/ios/452/calculator--v1.png","precio": 4990}
+])
+
+db.mensajes.insertMany(
+[
+{"nombre":"jeremias" ,"correo" :"jeremias@gmai.com","mensaje":"hola"},
+{"nombre":"jeremias" ,"correo" :"jeremias@gmai.com","mensaje":"como estas"},
+{"nombre":"juan" ,"correo" :"juan@gmai.com","mensaje":"hola"},
+{"nombre":"juan" ,"correo" :"juan@gmai.com","mensaje":"bien"},
+{"nombre":"jeremias" ,"correo" :"jeremias@gmai.com","mensaje":"q bueno"},
+{"nombre":"jeremias","correo" :"jeremias@gmai.com","mensaje":"como te ah ido"},
+{"nombre":"jeremias" ,"correo" :"jeremias@gmai.com","mensaje":"en la escuela?"},
+{"nombre":"juan" ,"correo" :"juan@gmai.com","mensaje":"bien "},
+{"nombre":"juan" ,"correo" :"juan@gmai.com","mensaje":"estan buenos los ejercicioos"},
+{"nombre":"juan" ,"correo" :"juan@gmai.com","mensaje":"pero me falta aun"}
+])
+
+**Mostrando mensajes**
+db.productos.find()   
+db.mensajes.find() 
+
+**Mostrando cantidad de elementos que contiene la collection**
+db.mensajes.count()   
+db.productos.count()
+
+
+** agregando un producto**
+db.productos.insertOne({"nombre": "cajas","descripcion": "nada","codigo": "3","foto":"3://img.icons8.com/ios/452/calculator--v1.png","precio": 120,"stock": 100})   
+
+**Listar productos con precio menor a 1000 pesos **
+db.productos.find({ precio: { $lt : 1000} })
+
+**Listar productos con precio entre 1000 a 3000 pesos **
+db.productos.find( { precio: { $gte : 1000, $lte : 3000} })
+
+**Listar productos con precio mator a 3000 pesos **
+db.productos.find( { precio: { $gt : 3000} })
+
+
+
+**Listar solo el nombre del tercer producto mas barato**
+db.productos.find({},{"nombre":1}).sort({"precio":1}).skip(3).limit(1)
+
+
+** Hacer actualizacion de todos los productos , agregando stock a todos ellos con un valor de 100**
+db.productos.updateMany({},{$set:{"stock":100}})
+
+
+**cambiar stock a 0 los productos con precios mayores a 4000 pesos**
+db.productos.updateMany({precio:{$gte:4000}},{$set:{stock:0}})
+
+**borrar todos los productos con precio menor a 1000 **
+db.productos.deleteMany({precio:{$lte:1000}})
+
+**crea usuario pepe clave 'asd456' que solo pueda leer la base de datos ecommerce y que no pueda cambiar la informacion** 
+use admin
+db.createUser({
+	user:"pepe",
+	pwd:"asd456",
+	roles:[{role:"read",db:"ecommerce"}]
+})
+
+ db.system.users.find()
+
+
+
+
