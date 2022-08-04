@@ -24,17 +24,17 @@ class MongoCRUD {
     }
 
 
-    findAll() {
+    async findAll() {
         return this.model.find({});
     }
 
 
-    update(id, toUpdate) {
+   async update(id, toUpdate) {
         return this.model.findByIdAndUpdate(id, toUpdate);
     }
 
  
-     remove(id) {
+     async remove(id) {
         return this.model.findByIdAndDelete(id);
     }
 }

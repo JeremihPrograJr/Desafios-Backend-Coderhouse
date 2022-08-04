@@ -13,14 +13,14 @@ const productos = productoDao
 router.post('/carrito' , async (req,res) => {
         
        
-        let carritos = await carrito.guardar({productos:[]})
+        let carritos = await carrito.create({productos:[]})
         res.json(carritos)
 });
    
 //eliminar carrito 
 router.delete('/carrito/:id' , async (req,res) => {
         let id = parseInt(req.params.id)
-        let eliminar = await carrito.Eliminar(id)
+        let eliminar = await carrito.remove(id)
         res.json(eliminar)
 });
    
@@ -45,7 +45,7 @@ router.post('/carrito/:id/productos' , async (req,res) => {
 router.get ('/carrito/:id/productos', async (req,res) => {
        //res.json(carrito.leer(parseInt(req.params.id)))
        const { id } = req.params;
-       let data = await carrito.leer()
+       let data = await carrito.findAll()
        let carritoId = data.find((e) => e.id == id)
        res.json(carritoId.productos)
 });
@@ -54,7 +54,7 @@ router.get ('/carrito/:id/productos', async (req,res) => {
 router.delete('/carrito/:id/productos/:id_prod' , async (req,res) => {
         let id_carrito = req.params.id
         let id_producto = req.params.id_prod
-        let DataCarrito = await carrito.buscarPorId(id_carrito)
+        let DataCarrito = await carrito.findById(id_carrito)
 
         if (!DataCarrito ){
                 throw {"error" : "No se puede encontrar el carrito"}
@@ -79,7 +79,7 @@ router.delete('/carrito/:id/productos/:id_prod' , async (req,res) => {
 
 
 router.delete ('/carrito/borrar/:id', (req,res) => {
-        res.json(carrito.Eliminar(parseInt(req.params.id)))
+        res.json(carrito.remove(parseInt(req.params.id)))
 });
 
 

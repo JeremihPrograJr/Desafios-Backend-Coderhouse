@@ -10,6 +10,6 @@ const schema = mongoose.Schema({
     timestamp: { type: Date, default: new Date() }
 });
 
-const Producto = mongoose.model('productos', schema);
 
-module.exports = Producto;
+
+module.exports = schema;

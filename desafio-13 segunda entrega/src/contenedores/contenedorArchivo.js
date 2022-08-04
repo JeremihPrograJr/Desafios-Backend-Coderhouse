@@ -7,10 +7,10 @@ class Persistencia_txt {
         }
      
 
-        async guardar(data){  
+        async create(data){  
           
         try {
-           let contenido =  await this.leer()
+           let contenido =  await this.findAll()
             console.log(contenido)
           
            data.id =  contenido.length === 0 ? 1 : contenido[contenido.length - 1].id + 1;
@@ -24,7 +24,7 @@ class Persistencia_txt {
          }
         } 
 
-       async leer(){
+       async findAll(){
             try {
                 const data =  await this.#fs.promises.readFile(this.ruta,'utf-8')
                
@@ -37,9 +37,9 @@ class Persistencia_txt {
     
         }
 
-        async buscarPorId(id){
+        async findById(id){
             try {
-                const data =  await this.leer()
+                const data =  await this.findAll()
                 let resultado = data.find((el)=>el.id == id)
                 
                 return  resultado
@@ -49,7 +49,7 @@ class Persistencia_txt {
     
         }
 
-        async Eliminar(id){
+        async remove(id){
             try {
                 let contenido =  await this.leer()
                 let IndiceEliminar = contenido.findIndex(elem => elem.id == id)
@@ -72,7 +72,7 @@ class Persistencia_txt {
 
         async buscarProductoId(id){
             try {
-                const data =  await this.leer()
+                const data =  await this.findAll()
                 let producto = data.find((el)=>el.id == id)
                 console.log(producto)
                 return  producto
@@ -82,9 +82,9 @@ class Persistencia_txt {
     
         }
     
-        async ActualizarProducto(id, producto){
+        async update(id, producto){
             try {
-                let contenido =  await this.leer()
+                let contenido =  await this.findAll()
                 let id_producto = contenido.findIndex(elem => elem.id == id );
 
                
@@ -112,7 +112,7 @@ class Persistencia_txt {
 
         async ActualizarCarro(id, carro){
             try {
-                let contenido =  await this.leer()
+                let contenido =  await this.findAll()
                 let id_Carro = contenido.findIndex(elem => elem.id == id );
     
                
@@ -138,7 +138,7 @@ class Persistencia_txt {
         async guardarCarroYproducto(id_carrito, producto){  
   
             try {
-                const data = await this.leer()
+                const data = await this.findAll()
                 //let carrito = data.find((c)=>c.id == id_carrito)
     
                 let resultado =   data.findIndex((elem) => elem.id == id_carrito)

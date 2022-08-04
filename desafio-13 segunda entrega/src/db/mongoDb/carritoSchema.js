@@ -9,6 +9,6 @@ const schema = mongoose.Schema({
 
 
 
-const Carrito = mongoose.model('carritos', schema);
+//const Carrito = mongoose.model('carritos', schema);
 
-module.exports = Carrito;
+module.exports = schema;

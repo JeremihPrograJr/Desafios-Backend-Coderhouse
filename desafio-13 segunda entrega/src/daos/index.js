@@ -4,7 +4,7 @@ const config = require('../config/database')
 function importarModulo (nombre_modulo,carpeta){
 
     try {
-        let ruta = '../daos/'+carpeta+'/'+nombre_modulo+''+config.tipoBaseDato
+       // let ruta = '../daos/'+carpeta+'/'+nombre_modulo+''+config.tipoBaseDato
 
       let ruta2=`${carpeta}/${nombre_modulo}${config.tipoBaseDato}`
     
@@ -19,11 +19,26 @@ function importarModulo (nombre_modulo,carpeta){
 
     }
 
+
 let carrito =  importarModulo('carritoDao','carrito')
 let producto = importarModulo('productoDao','producto')
 
-
-
+/*
+    switch(config.tipoBaseDato){
+        case 'mongodb': 
+            productoDao = new ProductosMongodb()
+            carritoDao = new CarritoMongodb()
+            break
+        
+        case 'Firebase':
+        break
+        default:
+            productoDao = new ProductosFirebase()
+            carritoDao = new CarritoFirebase()
+            break      
+    }
+    
+*/
 let carritoDao= new carrito()
 let productoDao= new producto()
 
