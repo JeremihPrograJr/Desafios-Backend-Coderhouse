@@ -3,7 +3,7 @@ const CarritoSchema = require('../../db/mongoDb/carritoSchema')
 
 class CarritoDaoMongo extends ContenedorMongo{
     constructor(){
-        super('productos',CarritoSchema)
+        super('carrito',CarritoSchema)
     }
 
 }

@@ -1,5 +1,12 @@
 
 const config = require('../config/database')
+const dotenv = require('dotenv');
+
+//const ConectarMongo= require('../db/mongoDb/conectarMongo')
+
+
+// obtengo la config del .env
+
 
 function importarModulo (nombre_modulo,carpeta){
 
@@ -22,25 +29,26 @@ function importarModulo (nombre_modulo,carpeta){
 
 let carrito =  importarModulo('carritoDao','carrito')
 let producto = importarModulo('productoDao','producto')
+let carritoDao,productoDao
 
-/*
     switch(config.tipoBaseDato){
-        case 'mongodb': 
-            productoDao = new ProductosMongodb()
-            carritoDao = new CarritoMongodb()
+        case 'Mongo': 
+            require('../db/mongoDb/conectarMongo');
+            dotenv.config();
+            productoDao = new producto()
+            carritoDao = new carrito()
             break
         
         case 'Firebase':
+            productoDao = new producto()
+            carritoDao = new carrito()
         break
         default:
-            productoDao = new ProductosFirebase()
-            carritoDao = new CarritoFirebase()
+         carritoDao= new carrito()
+         productoDao= new producto()
             break      
     }
     
-*/
-let carritoDao= new carrito()
-let productoDao= new producto()
 
 
 

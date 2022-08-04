@@ -6,6 +6,8 @@ class MongoCRUD {
 
     constructor(collection,schema) {
         this.model = mongoose.model(collection, schema);
+        console.log(collection)
+        console.log(this.model)
     }
 
  
