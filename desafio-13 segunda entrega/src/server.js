@@ -1,13 +1,13 @@
 const express = require('express')
 const app = express()
-
+const config = require('./config/database')
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/static', express.static(__dirname + 'public'))
 
 
-const router_productos =require('./routers/producto');
-const router_carrito = require('./routers/carrito')
+const router_productos =require('../src/routers/producto');
+const router_carrito = require('../src/routers/carrito')
 
 
 app.use('/api',router_productos)
@@ -30,8 +30,8 @@ app.use( (req,res,next) => {
 });
 
 
-const server = app.listen(puerto, () => {
-        console.log(`Conectandose al http://localhost:${process.env.PUERTO} `)
+const server = app.listen(config.PUERTO, () => {
+        console.log(`Conectandose al http://localhost:${config.PUERTO} `)
 })
 
 server.on('error' , (error)=> {
