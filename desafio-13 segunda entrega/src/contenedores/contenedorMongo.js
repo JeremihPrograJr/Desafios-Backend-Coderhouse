@@ -24,7 +24,7 @@ class MongoCRUD {
     async findById(id) {
     let data  =  await this.findAll();
     let resultado =  data.find((e) => e.id == id);
-
+        
     return   resultado;
     }
 
@@ -37,18 +37,26 @@ class MongoCRUD {
 
 
    async update(id, data) {
+
         let resultado =  await this.model.findById(id)
+
         if (!resultado){
-            return {"error":"No se encontro el producto"}
+            return resultado
         }
 
-        return this.model.findByIdAndUpdate(id, data);
+        let dato  = await this.model.findOneAndUpdate(
+            { _id: id },
+            {...data },
+            { new: true },
+          );
+    
+         
+        return dato;
     }
 
  
      async remove(id) {
-        console.log(id)
-        console.log(typeof id)
+   
         let resultado = await this.model.findById(id)
         console.log(resultado)
         return !resultado ? {"error":"No hay producto con esta id"}: this.model.findByIdAndDelete(id);

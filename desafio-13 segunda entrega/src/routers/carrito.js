@@ -30,13 +30,26 @@ router.post('/carrito/:id/productos' , async (req,res) => {
         let carritoId  = req.params.id
         let  id_producto = req.body.id_producto
         
-        let producto = await productos.buscarProductoId(id_producto)
-         if (!producto){
-                throw {"error":"No se encuentro el  producto"}
-         }
+ 
+        let carro = await carrito.findById(carritoId)
+        if (!carro){
+                throw { error: "No se encontro el carrito"};
 
+        }
+        console.log(carro)
+
+        let producto = await productos.findById(id_producto)
+        console.log(producto)
+        if (!producto){
+                throw { error: "No se encontro el producto"};
+
+        }
         
-       let carritos = await carrito.guardarCarroYproducto(carritoId,producto)
+        carro.productos.push(producto)
+
+       let carritos = await carrito.update(carritoId,carro)
+
+
         res.json(
                 carritos
         )
