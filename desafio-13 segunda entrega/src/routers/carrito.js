@@ -19,7 +19,7 @@ router.post('/carrito' , async (req,res) => {
    
 //eliminar carrito 
 router.delete('/carrito/:id' , async (req,res) => {
-        let id = parseInt(req.params.id)
+        let id = req.params.id
         let eliminar = await carrito.remove(id)
         res.json(eliminar)
 });

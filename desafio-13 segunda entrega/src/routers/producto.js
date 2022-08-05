@@ -51,7 +51,7 @@ router.get('/productos/listar/:id',async (req,res)=> {
 router.put('/productos/actualizar/:id', async (req,res) => {
 
     try {
-        let id = parseInt(req.params.id)
+        let id = req.params.id
         let modificar = productos.update(id,req.body)
         res.send(modificar)
 
@@ -66,7 +66,7 @@ router.put('/productos/actualizar/:id', async (req,res) => {
 router.delete('/productos/borrar/:id',(req,res) => {
 
     try {
-        let id = parseInt(req.params.id)
+        let id = req.params.id
         let borrar = productos.remove(id)
         res.send(borrar)
 

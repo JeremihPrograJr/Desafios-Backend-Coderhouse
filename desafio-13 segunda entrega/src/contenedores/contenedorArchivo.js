@@ -52,7 +52,7 @@ class Persistencia_txt {
         async remove(id){
             try {
                 let contenido =  await this.leer()
-                let IndiceEliminar = contenido.findIndex(elem => elem.id == id)
+                let IndiceEliminar = contenido.findIndex(elem => elem.id == parseInt(id))
                 console.log("id "+id)
 
                 if (IndiceEliminar == -1){
@@ -85,7 +85,7 @@ class Persistencia_txt {
         async update(id, producto){
             try {
                 let contenido =  await this.findAll()
-                let id_producto = contenido.findIndex(elem => elem.id == id );
+                let id_producto = contenido.findIndex(elem => elem.id == parseInt(id) );
 
                
                 if(id_producto === -1 )return {error:"No se puede actualizar"};
