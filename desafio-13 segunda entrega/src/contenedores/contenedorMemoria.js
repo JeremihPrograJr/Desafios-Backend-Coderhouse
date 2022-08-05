@@ -1,6 +1,6 @@
 
 
-class Memoria_producto {
+class Memoria {
     constructor(){
         this.productos = []
         this.id =0
