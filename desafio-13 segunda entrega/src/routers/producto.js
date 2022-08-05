@@ -48,7 +48,7 @@ router.get('/productos/listar/:id',async (req,res)=> {
         });
 
 
-router.put('/productos/actualizar/:id', async (req,res) => {
+router.put('/productos/actualizar/:id/producto', async (req,res) => {
 
     try {
         let id = req.params.id
