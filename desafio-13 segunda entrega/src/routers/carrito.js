@@ -24,37 +24,38 @@ router.delete('/carrito/:id' , async (req,res) => {
         res.json(eliminar)
 });
    
-
+//actualizar
 router.post('/carrito/:id/productos' , async (req,res) => {
         
+        //obtego las id
         let carritoId  = req.params.id
         let  id_producto = req.body.id_producto
         
- 
+        //busco si el carro existe
         let carro = await carrito.findById(carritoId)
         if (!carro){
                 throw { error: "No se encontro el carrito"};
 
         }
-        console.log(carro)
+   
 
+
+        //busco si el producto existe
         let producto = await productos.findById(id_producto)
-        console.log(producto)
         if (!producto){
                 throw { error: "No se encontro el producto"};
-
         }
         
+        //agrego producto el productos al array de productos que contiene el carrito
         carro.productos.push(producto)
 
+        //se envia el id del carrito y array (carro.productos)  con el nuevo producto agregado
        let carritos = await carrito.update(carritoId,carro)
 
-
-        res.json(
-                carritos
-        )
+        res.json(carritos)
 });
 
+//obtener lista de productos por carro id
 router.get ('/carrito/:id/productos', async (req,res) => {
        //res.json(carrito.leer(parseInt(req.params.id)))
        const { id } = req.params;
@@ -70,7 +71,7 @@ router.get ('/carrito/:id/productos', async (req,res) => {
        res.json(data.productos)
 });
 
-
+//eliminando productos del carrito por el id de carrito y producto
 router.delete('/carrito/:id/productos/:id_prod' , async (req,res) => {
         let id_carrito = req.params.id
         let id_producto = req.params.id_prod
@@ -97,9 +98,9 @@ router.delete('/carrito/:id/productos/:id_prod' , async (req,res) => {
         res.json(respuesta)
 });
 
-
+//eliminar carrito
 router.delete ('/carrito/borrar/:id', (req,res) => {
-        res.json(carrito.remove(parseInt(req.params.id)))
+        res.json(carrito.remove(req.params.id))
 });
 
 

@@ -37,11 +37,12 @@ class MongoCRUD {
 
 
    async update(id, data) {
-
+        //verificamos si existe el carrito
         let resultado =  await this.model.findById(id)
 
+        
         if (!resultado){
-            return resultado
+            return resultado  //enviamos el return(que valor retornado sera undefined o null)
         }
 
         let dato  = await this.model.findOneAndUpdate(
