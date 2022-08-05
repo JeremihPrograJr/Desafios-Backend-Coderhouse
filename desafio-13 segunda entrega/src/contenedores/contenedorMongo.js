@@ -22,22 +22,37 @@ class MongoCRUD {
 
 
     async findById(id) {
-        return this.model.findById(id);
+        let resultado = await this.model.findById(id)
+        console.log(resultado)
+        return  !resultado ? {"error":"No hay producto con esta id"}: resultado;
     }
 
 
     async findAll() {
-        return this.model.find({});
+        let resultado = await this.model.find({})
+
+        console.log(typeof resultado)
+
+        return resultado.length <=0 ?{"error":"No hay productos"}:resultado ;
     }
 
 
-   async update(id, toUpdate) {
-        return this.model.findByIdAndUpdate(id, toUpdate);
+   async update(id, data) {
+        let resultado =  await this.model.findById(id)
+        if (!resultado){
+            return {"error":"No se encontro el producto"}
+        }
+
+        return this.model.findByIdAndUpdate(id, data);
     }
 
  
      async remove(id) {
-        return this.model.findByIdAndDelete(id);
+        console.log(id)
+        console.log(typeof id)
+        let resultado = await this.model.findById(id)
+        console.log(resultado)
+        return !resultado ? {"error":"No hay producto con esta id"}: this.model.findByIdAndDelete(id);
     }
 }
 

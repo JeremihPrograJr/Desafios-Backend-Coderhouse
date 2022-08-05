@@ -40,7 +40,7 @@ router.get('/productos/listar/:id',async (req,res)=> {
             console.log("ID " + req.params.id)
             let id = req.params.id
             let obtenerProducto = await productos.findById(id)
-               // res.type('json').send(JSON.stringify(obtenerProducto,null,'\t'))
+              
                 res.send(obtenerProducto)
         } catch (error) {
                 res.status(500).send(error);
@@ -52,7 +52,7 @@ router.put('/productos/actualizar/:id', async (req,res) => {
 
     try {
         let id = req.params.id
-        let modificar = productos.update(id,req.body)
+        let modificar = await productos.update(id,req.body)
         res.send(modificar)
 
     } catch (error) {
@@ -63,11 +63,11 @@ router.put('/productos/actualizar/:id', async (req,res) => {
 
 
 
-router.delete('/productos/borrar/:id',(req,res) => {
+router.delete('/productos/borrar/:id' ,async(req,res) => {
 
     try {
         let id = req.params.id
-        let borrar = productos.remove(id)
+        let borrar =await  productos.remove(id)
         res.send(borrar)
 
     } catch (error) {
