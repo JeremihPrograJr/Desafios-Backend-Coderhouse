@@ -22,16 +22,15 @@ class MongoCRUD {
 
 
     async findById(id) {
-        let resultado = await this.model.findById(id)
-        console.log(resultado)
-        return  !resultado ? {"error":"No hay producto con esta id"}: resultado;
+    let data  =  await this.findAll();
+    let resultado =  data.find((e) => e.id == id);
+
+    return   resultado;
     }
 
 
     async findAll() {
         let resultado = await this.model.find({})
-
-        console.log(typeof resultado)
 
         return resultado.length <=0 ?{"error":"No hay productos"}:resultado ;
     }

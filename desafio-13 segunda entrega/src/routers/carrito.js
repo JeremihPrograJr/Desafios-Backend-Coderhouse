@@ -45,9 +45,16 @@ router.post('/carrito/:id/productos' , async (req,res) => {
 router.get ('/carrito/:id/productos', async (req,res) => {
        //res.json(carrito.leer(parseInt(req.params.id)))
        const { id } = req.params;
-       let data = await carrito.findAll()
-       let carritoId = data.find((e) => e.id == id)
-       res.json(carritoId.productos)
+       let data = await carrito.findById(id)
+      
+        if (!data){
+                console.log("emtre aca")
+                throw { error: "No se encontro el carrito"};
+        }
+
+       //let carritoId = data.find((e) => e.id == id)
+
+       res.json(data.productos)
 });
 
 
