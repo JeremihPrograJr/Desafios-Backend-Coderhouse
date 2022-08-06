@@ -35,11 +35,15 @@ class CrudFirebase{
     }
   
     async update(id, data) {
-    
+      let doc = this.query.doc(`${id}`);
+
+      let resultado = await doc.update(data);
+      return resultado
     }
     async remove(id) {
-    
-    
+      let doc = this.query.doc(`${id}`);
+      let resultado= await doc.delete();
+      return resultado
     }
 
 
