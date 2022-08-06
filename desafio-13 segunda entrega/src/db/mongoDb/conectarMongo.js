@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config()
 
 const url = require('../../config/database');
 
+console.log(url.MONGO_URL_NUBE)
 const connection = mongoose.connect(url.MONGO_URL_NUBE, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.on('connected', () => {

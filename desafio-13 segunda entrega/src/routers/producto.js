@@ -67,7 +67,6 @@ router.put('/productos/actualizar/:id/producto', async (req,res) => {
 
 
 
-
 router.delete('/productos/borrar/:id' ,async(req,res) => {
 
     try {

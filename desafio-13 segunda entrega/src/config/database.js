@@ -1,6 +1,6 @@
 
-require('dotenv').config()
-
+require('dotenv').config();
+console.log(process.env.BASE_DATOS)
 
 const config = {
     mysql : {
@@ -20,11 +20,11 @@ const config = {
         },
         useNullAsDefault: true
     },
-    MONGO_URL_DB_LOCAL :"mongodb://localhost:27017/ecommerce",
-    MONGO_URL_NUBE : "mongodb+srv://coderhouse:coderhouse@cluster0.kcqoc8j.mongodb.net/ecommerce?retryWrites=true&w=majority",
-    //MONGO_URL_NUBE :"mongodb+srv://coderhouse:coderhouse@cluster0.afyxx.mongodb.net/coderhouse?retryWrites=true&w=majority",
-    tipoBaseDato: 'Firebase',
-    PUERTO: 8080,
+    MONGO_URL_DB_LOCAL :process.env.MONGO_URL_DB_LOCAL,
+    MONGO_URL_NUBE : process.env.MONGO_URL_NUBE,
+  
+    tipoBaseDato:process.env.BASE_DATOS,
+    PUERTO: process.env.PUERTO,
     producto:'producto',
     carrito:'carrito'
 
