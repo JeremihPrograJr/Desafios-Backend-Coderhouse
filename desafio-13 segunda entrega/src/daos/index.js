@@ -14,6 +14,7 @@ function importarModulo (nombre_modulo,carpeta){
        // let ruta = '../daos/'+carpeta+'/'+nombre_modulo+''+config.tipoBaseDato
 
       let ruta2=`${carpeta}/${nombre_modulo}${config.tipoBaseDato}`
+      console.log(ruta2)
     
       let  modulo2 = require(`../daos/${ruta2}`);
       //let modulo =require(`../daos/producto/productoDaoArchivo`)
@@ -40,12 +41,14 @@ let carritoDao,productoDao
             break
         
         case 'Firebase':
-            console.log("entre aca")
+            
             require('../db/firebase/base-firebase.json')
             productoDao = new producto()
             carritoDao = new carrito()
             break
         default:
+            console.log("entre aca")
+            console.log(carrito)
          carritoDao= new carrito()
          productoDao= new producto()
             break      

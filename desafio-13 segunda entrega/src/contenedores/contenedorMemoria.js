@@ -2,55 +2,44 @@
 
 class Memoria {
     constructor(){
-        this.productos = []
+        this.data = []
         this.id =0
     }
 
-    async create(data){
-        try {
+    async create(newData){
+       
                 this.id+=1
-                data.id = this.id
-                data.timestamp = new Date().toLocaleString()
-                this.productos.push(data)
-               // persistencia_producto_txt.guardar(this.productos)
-            console.log(this.productos)
-            
-        
-        } catch (error) {
-            return console.log(`existe problema al guardar :${error}`)
-           // throw new Error("existe un problema al guardar el producto")
-        }
-        
+                newData.id = this.id
+               newData.timestamp = new Date().toLocaleString()
+                this.data.push(newData)
+                console.log(newData)
+                
+            return this.data
+
     }
 
     async findAll(){
-        
-        try {
-            console.log(this.productos)
-            return (this.productos.length ===0)? {error:"No hay productos cargados"}: this.productos
-        } catch (error) {
-            return console.log(`existe problema al leer:${error.message}`)
-        }
-
+        return  this.data
     }
 
     async findById(id){
         try {
-            let result = this.productos.find( elem => elem.id ===id)
-            return (result ===undefined || result ===null )?{error:"Producto no encontrado"}:result;
+            let result = this.data.find( (elem) => elem.id ==id)
+            return result
         } catch (error) {
             return console.log(`existe problema al buscar por id: ${error.message}`)
         }
        
     }
 
-    async update (id,data){
+    async update (id,newData){
         try {
-            let id_producto = this.productos.findIndex(elem => elem.id ===id );
+            let id_producto = this.data.findIndex(elem => elem.id == id );
+            console.log(id_producto)
             if(id_producto === -1 )return {error:"No se puede actualizar"};
-            producto.id = id
-            producto.timestamp =this.productos[id_producto].timestamp
-            return  this.productos.splice(id_producto,1,producto)
+            newData.id = id
+            newData.timestamp =this.data[id_producto].timestamp
+            return  this.data.splice(id_producto,1,newData)
 
         } catch (error) {
             return console.log(`existe problema al actualizar por id: ${error.message}`)
@@ -60,8 +49,8 @@ class Memoria {
 
     async remove(id){
         try {
-            let resultado = this.productos.findIndex(elem => elem.id === id)
-            return (resultado != -1 ) ?this.productos.splice(resultado,1):{error:"No es posible borrar el producto"}
+            let resultado = this.data.findIndex(elem => elem.id == id)
+            return (resultado != -1 ) ?this.data.splice(resultado,1):{error:"No es posible borrar el producto"}
         } catch (error) {
             return console.log(`existe problema al borrar por id: ${error.message}`)
 
@@ -70,3 +59,6 @@ class Memoria {
     }
     
 }
+
+
+module.exports = Memoria

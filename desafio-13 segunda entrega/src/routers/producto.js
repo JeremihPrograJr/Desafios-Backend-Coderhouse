@@ -27,6 +27,7 @@ router.get('/productos/listar', async (req, res) => {
 
     try {
             let data = await productos.findAll();
+            console.log(data)
             res.send(data);
         } catch (error) {
             res.status(500).send(error);
@@ -38,8 +39,9 @@ router.get('/productos/listar/:id',async (req,res)=> {
     
         try {
             let id = req.params.id
+            console.log(id)
             let obtenerProducto = await productos.findById(id)
-              console.log(obtenerProducto)
+             
             if (!obtenerProducto){
                 throw {error:"No se encuentra producto  con la id ingresada"}
             }
