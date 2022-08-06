@@ -15,7 +15,7 @@ router.post('/productos/guardar', async  (req,res)=>{
     try {
         console.log(req.body)
         let objeto = await productos.create(req.body)
-        console.log(req.body)
+        
         res.json(objeto)
     } catch (error) {
         res.status(500).send(error);

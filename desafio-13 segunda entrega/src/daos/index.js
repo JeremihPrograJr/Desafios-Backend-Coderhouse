@@ -40,9 +40,11 @@ let carritoDao,productoDao
             break
         
         case 'Firebase':
+            console.log("entre aca")
+            require('../db/firebase/base-firebase.json')
             productoDao = new producto()
             carritoDao = new carrito()
-        break
+            break
         default:
          carritoDao= new carrito()
          productoDao= new producto()

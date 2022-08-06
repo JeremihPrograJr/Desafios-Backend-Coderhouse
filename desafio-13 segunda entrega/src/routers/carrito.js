@@ -92,7 +92,7 @@ router.delete('/carrito/:id/productos/:id_prod' , async (req,res) => {
 
         console.log("id carro " & id_carrito)
         console.log(DataCarrito)
-        let respuesta = await carrito.actualizarCarro(id_carrito,DataCarrito)
+        let respuesta = await carrito.update(id_carrito,DataCarrito)
 
         //let eliminar = await carrito.eliminarCarrito(id)
         res.json(respuesta)

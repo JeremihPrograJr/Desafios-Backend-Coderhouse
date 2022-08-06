@@ -23,7 +23,7 @@ const config = {
     MONGO_URL_DB_LOCAL :"mongodb://localhost:27017/ecommerce",
     MONGO_URL_NUBE : "mongodb+srv://coderhouse:coderhouse@cluster0.kcqoc8j.mongodb.net/ecommerce?retryWrites=true&w=majority",
     //MONGO_URL_NUBE :"mongodb+srv://coderhouse:coderhouse@cluster0.afyxx.mongodb.net/coderhouse?retryWrites=true&w=majority",
-    tipoBaseDato: 'Mongo',
+    tipoBaseDato: 'Firebase',
     PUERTO: 8080,
     producto:'producto',
     carrito:'carrito'
