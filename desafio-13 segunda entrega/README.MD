@@ -11,19 +11,10 @@ Para  inciar:
 
 2. Editar database.js
 
-3. Elegir la base de datos (mysql o sqlite3)
+3. Elegir la base de datos (tipoBaseDato)
 
 
-## Creacion De tablas usando NPM RUN
 
-1. npm run drop-table
-
-2. npm run table-mensajes
-
-3. npm run table-productos 
-
-
-## Rutas.
 
 ### Mensajes
 1.Guardar: http://localhost:8080/api/mensajes/guardar
