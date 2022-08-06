@@ -28,7 +28,10 @@ class CrudFirebase{
     }
   
     async findById(id) {
-      
+      let doc = this.query.doc(`${id}`);
+      let data = await doc.get();
+      let dataWithId= {id:data.id, ...data.data()}
+      return dataWithId
     }
   
     async update(id, data) {

@@ -37,11 +37,14 @@ router.get('/productos/listar', async (req, res) => {
 router.get('/productos/listar/:id',async (req,res)=> {
     
         try {
-            console.log("ID " + req.params.id)
             let id = req.params.id
             let obtenerProducto = await productos.findById(id)
-              
+              console.log(obtenerProducto)
+            if (!obtenerProducto){
+                throw {error:"No se encuentra producto  con la id ingresada"}
+            }
                 res.send(obtenerProducto)
+
         } catch (error) {
                 res.status(500).send(error);
             }
