@@ -6,9 +6,8 @@ const schema = mongoose.Schema({
     apellidos: { type: String, max: 400 },
     edad: { type: Number, max: 400 },
     alias: { type: String, max:400 },
-    avatar: { type: String,max:400},
-    timestamp: { type: Date, default: new Date() }
-});
+    avatar: { type: String,max:400} }
+    ,{timestamps:true});
 
 
 
