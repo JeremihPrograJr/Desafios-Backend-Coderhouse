@@ -1,11 +1,20 @@
+const { json } = require('express');
 const express = require('express');
 const router = express.Router();
 
-const mensajeServices = require('../api/mensajes')
+const mensajeServices = require('../api/mensajes');
+const usersServices = require('../api/usuarios');
 
 
-router.post('/mensaje/guardar', async(req,res)=>{
-    let objeto = req.body
+router.post('/mensaje/:usuario/descripcion', async(req,res)=>{
+    let id_usuario = req.params.usuario
+    let mensajee = "bien bien"
+    let usuario= await usersServices.findById(id_usuario)
+    
+
+
+    let objeto = {mensaje:mensajee,author:usuario }
+                
     let resultado = await mensajeServices.create(objeto)
     res.json(resultado)
 

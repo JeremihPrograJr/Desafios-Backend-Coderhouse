@@ -6,6 +6,9 @@ const productos = require('./api/productos');
 const mensajes = require('./api/mensajes')
 const usuario = require('./api/usuarios')
 
+const {normalize,schema,denormalize} = require('normalizr')
+
+
 const dotenv = require('dotenv');
 dotenv.config()
 
@@ -23,8 +26,23 @@ io.on('connection', async socket => {
     
     socket.emit('productos',resultadoProducto);
    
-    let chat = await mensajes.create()
+    let chat = await mensajes.findAll()
+   
     socket.emit('mensajes', chat);
+
+
+    const schemaAuthor = new schema.Entity('author');
+
+    const schemaMensaje = new schema.Entity('mensaje', {
+        author: schemaAuthor
+    })
+    
+    
+
+    const objetoNormalizado = normalize(chat,schemaMensaje)
+    socket.emit('normalizer', objetoNormalizado);
+    
+
     
     socket.on('update', data => {
        // let updateProducto= await productos.populate()
@@ -45,7 +63,8 @@ io.on('connection', async socket => {
 
 const route_productos = require('./routers/producto');
 const route_usuarios= require('./routers/usuario')
-const route_mensajes= require('./routers/mensajes')
+const route_mensajes= require('./routers/mensajes');
+const { Schema } = require('mongoose');
 app.use('/api',route_productos)
 app.use('/api',route_usuarios)
 app.use('/api',route_mensajes)

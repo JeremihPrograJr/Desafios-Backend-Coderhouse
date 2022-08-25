@@ -16,13 +16,15 @@ class MongoCrud{
     
      
         async create(data) {
+            console.log(data)
             return this.model.create(data);
         }
     
     
-        async findById(id) {
+        async findById(id2) {
         let data  =  await this.findAll();
-        let resultado =  data.find((e) => e.id == id);
+       
+        let resultado =  data.find((el) => el._id == id2)
             
         return   resultado;
         }
@@ -31,7 +33,7 @@ class MongoCrud{
         async findAll() {
             let resultado = await this.model.find({})
     
-            return resultado.length <=0 ?{"error":"No hay productos"}:resultado ;
+            return resultado.length <=0 ?{"error":"No hay nada"}:resultado ;
         }
     
     

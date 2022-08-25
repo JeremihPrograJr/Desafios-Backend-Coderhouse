@@ -27,7 +27,7 @@ Para  inciar:
 		"precio": 200,
 		"stock": 22
 	}
-## estrucutra json usuario
+## estructura json usuario
 *{
     "id":"jeremias@gmail.com",
     "nombre":"jeremias",

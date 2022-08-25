@@ -9,16 +9,22 @@ socket.on('productos', function (productos) {
 });
 
 socket.on('mensajes',function (data) {
-    console.log(data)
+    
     render(data)
+})
+
+socket.on('normalizer',function (data) {
+    
+    console.log(data)
 })
 
 
 function render(data){
+    
     let html = data.map(elem =>{
         return (` 
             <div class="allMensajes">
-                <p class="email">${elem.email}  <span class="fecha">[${elem.fecha}] :</span>     <em class="texto">${elem.texto}</em> </p>
+                <p class="email">${elem.author.id}  <span class="fecha">(${elem.timestamp}):</span>     <em class="texto">${elem.mensaje}</em> </p>
             </div>
         `)
     }).join(" ");
