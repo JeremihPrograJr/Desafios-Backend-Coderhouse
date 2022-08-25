@@ -19,7 +19,6 @@ class Productos extends Mongo{
             newProductos.push(newProducto)
             
         }
-        console.log(this.productos)
         return newProductos
 
     }
