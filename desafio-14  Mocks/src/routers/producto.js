@@ -3,22 +3,27 @@ const router = express.Router();
 
 const productos = require('../api/productos')
 
+router.get('/productos-test', async (req,res)=>{
+        res.send("hola")
+})
 
 router.post('/productos/guardar', async(req,res)=>{
     let objeto = req.body
-    res.json(productos.guardar(objeto))
+    let resultado = await productos.create(objeto)
+    res.json(resultado)
 
 })
 
 router.get('/productos/listar',async (req,res)=> {
-       res.json(productos.leer())
+        let resultado= await productos.findAll()
+       res.json(resultado)
 
 })
 
 router.get('/productos/listar/:id',async (req,res)=> {
     
         let id = req.params.id
-        let obtenerProducto = productos.buscarProductoId(id)
+        let obtenerProducto = await productos.findById(id)
         res.type('json').send(JSON.stringify(obtenerProducto,null,'\t'))
 
 })
@@ -26,8 +31,8 @@ router.get('/productos/listar/:id',async (req,res)=> {
 
 router.put('/productos/actualizar/:id',async (req,res) => {
 
-        let id = parseInt(req.params.id)
-        let modificar = productos.actualizar(id,req.body)
+        let id = req.params.id
+        let modificar = await productos.update(id,req.body)
         res.send(modificar)
 
 })
@@ -35,8 +40,8 @@ router.put('/productos/actualizar/:id',async (req,res) => {
 
 router.delete('/productos/borrar/:id',async (req,res) => {
 
-        let id = parseInt(req.params.id)
-        let borrar = productos.borrar(id)
+        let id = req.params.id
+        let borrar = await productos.remove(id)
         res.send(borrar)
 })
 
