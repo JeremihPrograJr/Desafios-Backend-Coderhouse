@@ -2,6 +2,7 @@ const socket = io.connect();
 
 socket.on('productos', function (productos) {
     console.log('productos socket client')
+   
     document.getElementById('datos-tabla').innerHTML = data2TableHBS(productos)
     
     
@@ -78,7 +79,7 @@ function data2TableHBS(productos) {
                 </tr>
                 {{#each productos}}
                 <tr>
-                    <td>{{this.title}}</td>
+                    <td>{{this.name}}</td>
                     <td>$ {{this.price}}</td>
                     <td><img width="50" src={{this.thumbnail}} alt="not found"></td>
                 </tr>

@@ -18,12 +18,17 @@ require('../src/db/connection');
 
 io.on('connection', async socket => {
     console.log('Nuevo cliente conectado!');
-    socket.emit('productos',productos.findAll());
+
+    let resultadoProducto= await productos.ProductosGenerados()
+    
+    socket.emit('productos',resultadoProducto);
+   
     let chat = await mensajes.create()
     socket.emit('mensajes', chat);
     
     socket.on('update', data => {
-        io.sockets.emit('productos', productos.findAll());
+       // let updateProducto= await productos.populate()
+        //io.sockets.emit('productos', updateProducto);
     });
 
     socket.on('nuevo-mensaje',  async mensaje =>{

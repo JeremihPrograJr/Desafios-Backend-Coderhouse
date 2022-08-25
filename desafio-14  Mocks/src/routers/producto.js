@@ -4,13 +4,26 @@ const router = express.Router();
 const productos = require('../api/productos')
 
 router.get('/productos-test', async (req,res)=>{
-        res.send("hola")
+
+        try {
+           let resultado= await productos.populate()
+           res.send({status:"ok", payload:resultado})          
+        } catch (error) {
+                res.status(500).send({status:"error",error:"Hubo un problema al cargar productos"})
+        }
+
+    
 })
 
 router.post('/productos/guardar', async(req,res)=>{
-    let objeto = req.body
-    let resultado = await productos.create(objeto)
-    res.json(resultado)
+        try {
+                let objeto = req.body
+                let resultado = await productos.create(objeto)
+                res.json(resultado)
+        } catch (error) {
+                res.status(500).send({status:"error", error:"No se guardaron los valores"})
+        }
+
 
 })
 
