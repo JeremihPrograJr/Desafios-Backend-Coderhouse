@@ -7,16 +7,17 @@ const usersServices = require('../api/usuarios');
 
 
 router.post('/mensaje/:usuario/descripcion', async(req,res)=>{
-    let id_usuario = req.params.usuario
-    let mensajee = "bien bien"
-    let usuario= await usersServices.findById(id_usuario)
     
 
-
-    let objeto = {mensaje:mensajee,author:usuario }
-                
+    let id_usuario = req.params.usuario
+    let mensaje = req.body.descripcion
+    
+    let usuario= await usersServices.findById(id_usuario)
+    let objeto = {mensaje:mensaje,author:usuario }
     let resultado = await mensajeServices.create(objeto)
+    
     res.json(resultado)
+
 
 })
 

@@ -30,7 +30,6 @@ io.on('connection', async socket => {
    
     socket.emit('mensajes', chat);
 
-    console.log(chat)
     const schemaAuthor = new schema.Entity('author',{},{idAttribute: '_id'});
 
     const schemaMensaje = new schema.Entity('mensaje', {

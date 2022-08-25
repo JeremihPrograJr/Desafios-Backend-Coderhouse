@@ -100,3 +100,4 @@ function data2TableHBS(productos) {
     let html = template({ productos: productos, hayProductos: productos.length });
     return html;
 }
+
