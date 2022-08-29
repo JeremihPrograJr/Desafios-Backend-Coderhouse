@@ -60,6 +60,12 @@ class MongoCrud{
             console.log(resultado)
             return !resultado ? {"error":"No hay elemento con esta id"}: this.model.findByIdAndDelete(id);
         }
+
+
+        async findOne(data){
+            let resultado = await this.model.findOne({$and:data})
+            return resultado
+        }
     }
     
 
