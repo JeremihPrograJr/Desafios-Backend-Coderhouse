@@ -60,12 +60,10 @@ router.get('/user/listar',async (req,res)=> {
 
 
 router.get('/user/logout',(req,res) => {
-    
     req.session.destroy((err) => {
         if(err)return res.status(500).send({status:"error", payload:"ocurrio un error"})
-        res.render('logout',{name:req.session.user.name})
+        res.send({status:"ok"})
     })
-   // if(!req.session.user) return res.redirect('/login')
     
 })
 
