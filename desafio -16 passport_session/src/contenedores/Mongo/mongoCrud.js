@@ -17,6 +17,7 @@ class MongoCrud{
      
         async create(data) {
             console.log(this.model)
+            console.log(data)
             return this.model.create(data);
         }
     
@@ -65,6 +66,12 @@ class MongoCrud{
             let resultado = await this.model.findOne({$and:data},projection)
             return resultado
         }
+
+        async findEmail (data){
+            let resultado = await this.model.findOne(data)
+            return resultado
+        }
+        
     }
     
 

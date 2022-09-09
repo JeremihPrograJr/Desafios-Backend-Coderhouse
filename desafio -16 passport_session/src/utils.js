@@ -1,5 +1,9 @@
 const faker = require('faker')
 faker.locale= 'es'
+const bcrypt = require('bcrypt')
+
+const createHash = passport => bcrypt.hashSync(passport,bcrypt.genSaltSync(10));
+const isValidPassword = (user,password) => bcrypt.compareSync(password,user.password)
 
 const generateProducto = ()=>{
     return {
@@ -10,4 +14,6 @@ const generateProducto = ()=>{
 }
 
 
-module.exports= generateProducto
+module.exports= {generateProducto,
+                createHash,
+                isValidPassword}
