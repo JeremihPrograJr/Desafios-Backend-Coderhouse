@@ -63,7 +63,9 @@ class MongoCrud{
         }
 
         async findOne(data,projection){
-            let resultado = await this.model.findOne({$and:data},projection)
+
+           // let resultado = await this.model.findOne({$and:data},projection)
+           let resultado = await this.model.findOne(data,projection)
             return resultado
         }
 

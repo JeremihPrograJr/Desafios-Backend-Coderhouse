@@ -4,6 +4,8 @@ const mongoose= require('mongoose')
 const mongoStore = require('connect-mongo')
 const session = require('express-session')
 const handlebars = require('express-handlebars');
+const passport = require('passport')
+const initializedPassport = require('./config/passport.config')
 const server = app.listen((8080),()=> { console.log("servidor escuchando")})
 
 
@@ -17,9 +19,7 @@ const connection = mongoose.connect('mongodb+srv://coderhouse:coderhouse@cluster
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'))
-app.engine('handlebars',handlebars.engine())
-app.set('views',__dirname+'/views')
-app.set('view engine','handlebars')
+
 
 app.use(session({
     store:mongoStore.create({
@@ -29,13 +29,19 @@ app.use(session({
     }),
     secret:"pina"
 }))
+initializedPassport();
+app.use(passport.initialize());
+app.use(passport.session());
 
-
+app.engine('handlebars',handlebars.engine())
+app.set('views',__dirname+'/views')
+app.set('view engine','handlebars')
 
 const route_productos = require('./routers/router_productos');
 const route_usuarios= require('./routers/router_usuario')
 const route_mensajes= require('./routers/router_mensaje');
 const router_vista = require('./routers/views_router')
+
 
 app.use('/api',route_productos)
 app.use('/api',route_usuarios)

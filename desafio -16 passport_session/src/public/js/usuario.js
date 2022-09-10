@@ -9,17 +9,6 @@ if (formCreateUser){
         let obj = {}
         data.forEach((value,key) => obj[key]=value)
        
-        /*
-        fetch('/api/user/create',{
-            method:'Post',
-            body: JSON.stringify(obj),
-            headers:{
-                'Content-Type':"application/json"
-            },
-        }).then((result)=> result.json())
-      //  .then((json)=> console.log(json))//{if (json.status == 'sucess')window.location.href = 'login'}
-    */
-
       fetch('/api/user/create',{
         method:"POST",
         headers:{"Content-type":"application/json"},
@@ -32,6 +21,12 @@ if (formCreateUser){
         }else{
           console.log('something went wrong :(')
            console.log(json)
+           Swal.fire(
+            json.error,
+            'You clicked the button!',
+            'error'
+          )
+           //window.location.href = 'failregister'
         }
          
 

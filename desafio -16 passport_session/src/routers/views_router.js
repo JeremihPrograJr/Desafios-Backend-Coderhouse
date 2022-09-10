@@ -19,7 +19,9 @@ router.get('/login',(req,res) => {
     res.render('login')
 })
 
-
+router.get('/failregister',(req,res) => {
+    if(req.session.user) return res.render('error_register')
+})
 
 
 module.exports = router
