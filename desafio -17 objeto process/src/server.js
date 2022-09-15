@@ -5,14 +5,27 @@ const mongoStore = require('connect-mongo')
 const session = require('express-session')
 const handlebars = require('express-handlebars');
 const passport = require('passport')
+const yargs = require('yargs')
+const dotenv = require('dotenv');
+dotenv.config()
+const yargInstace =yargs(process.argv.slice(2)).default({
+m:"prod",
+p:8080
+}).alias({
+m:"MODE",
+p:"PUERTO"
+}).boolean('debug')
+const args = yargInstace.argv
+console.log(args)
+
 const initializedPassport = require('./config/passport.config')
-const server = app.listen((8080),()=> { console.log("servidor escuchando")})
+console.log(args.PUERTO)
+const server = app.listen((args.PUERTO),()=> { console.log("servidor escuchando ")})
 
 
 
 const {normalize,schema,denormalize} = require('normalizr')
-const dotenv = require('dotenv');
-dotenv.config()
+
 
 const connection = mongoose.connect('mongodb+srv://coderhouse:coderhouse@cluster0.kcqoc8j.mongodb.net/ecommerce2?', { useNewUrlParser: true, useUnifiedTopology: true });
 
