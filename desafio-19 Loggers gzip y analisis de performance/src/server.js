@@ -44,6 +44,11 @@ app.get('/suma/:num1/:num2',(req,res) => {
 
 })
 
+function obtenerRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 app.use( (req,res,next) => {
     let error = {
             error: -2,
