@@ -1,17 +1,54 @@
 const express = require('express')
 const app = express()
+const mongoose= require('mongoose')
+const mongoStore = require('connect-mongo')
+const session = require('express-session')
+const handlebars = require('express-handlebars');
+const passport = require('passport')
+const initializedPassport = require('./config/passport.config')
 const config = require('./config/database')
+const server = app.listen(config.PUERTO, () => {
+    console.log(`Conectandose al http://localhost:${config.PUERTO} `)
+})
+
+
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use('/static', express.static(__dirname + 'public'))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'))
+
+
+
+app.use(session({
+        store:mongoStore.create({
+            mongoUrl:'mongodb+srv://coderhouse:coderhouse@cluster0.kcqoc8j.mongodb.net/ecommerce2?',
+            mongoOptions:{useNewUrlParser:true,useUnifiedTopology:true},
+            ttl:1000
+        }),
+        secret:"pina"
+    }))
+initializedPassport();
+app.use(passport.initialize());
+app.use(passport.session());
+    
+app.engine('handlebars',handlebars.engine())
+app.set('views',__dirname+'/views')
+app.set('view engine','handlebars')
+    
+
+
 
 
 const router_productos =require('../src/routers/producto');
 const router_carrito = require('../src/routers/carrito')
+const router_usuario = require('../src/routers/usuario.router')
+const router_views_usuarios = require('../src/routers/views.usuarios')
 
 
 app.use('/api',router_productos)
 app.use('/api',router_carrito)
+app.use('/api',router_usuario)
+app.use('',router_views_usuarios)
+
 
 app.get('/', (req,res) => {
         res.send("home")
@@ -30,63 +67,9 @@ app.use( (req,res,next) => {
 });
 
 
-const server = app.listen(config.PUERTO, () => {
-        console.log(`Conectandose al http://localhost:${config.PUERTO} `)
-})
 
 server.on('error' , (error)=> {
         console.log('Error en el servidor :', error)
 });
 
-/*
-const express = require ('express')
-const app = express()
-const server = require('http').Server(app)
-const io = require('socket.io')(server)
-const productos = require('./api/producto');
-const mensajes = require('./api/mensaje')
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'))
-
-
-io.on('connection', async socket => {
-    console.log('Nuevo cliente conectado!');
-    let dataProducto= await productos.listar()
-    socket.emit('productos',dataProducto);
-   
-    let chat = await mensajes.listar()
-    
-    socket.emit('mensajes', chat);
-    
-    socket.on('update',async data => {
-        let newDataProducto= await productos.listar()
-        io.sockets.emit('productos', newDataProducto);
-    
-    });
-
-    socket.on('nuevo-mensaje',  async mensaje =>{
-       // console.log(mensaje)
-        const guardando = await mensajes.guardar(mensaje)
-        io.sockets.emit('mensajes', guardando);
-
-    });
-
-});
-
-
-
-
-const route_productos = require('./routers/producto');
-const route_mensajes = require('./routers/mensajes');
-
-app.use('/api',route_productos)
-app.use('/api',route_mensajes)
-
-
-server.listen(8080,  () => {
-    console.log("escuchando puerto 8080")
-})
-
-*/

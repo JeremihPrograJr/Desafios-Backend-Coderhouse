@@ -28,13 +28,15 @@ function importarModulo (nombre_modulo,carpeta){
 
 let carrito =  importarModulo('carritoDao','carrito')
 let producto = importarModulo('productoDao','producto')
-let carritoDao,productoDao
+let usuario = importarModulo('usuarioDao','usuario')
+
+let carritoDao,productoDao,usuarioDao
 
 //importando clases
 carritoDao= new carrito()
 productoDao= new producto()
- 
+usuarioDao = new usuario()
 
 
 
-module.exports= { carritoDao,productoDao}
+module.exports= { carritoDao,productoDao,usuarioDao}

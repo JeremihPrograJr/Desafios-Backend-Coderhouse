@@ -1,0 +1,39 @@
+ <div class="jumbotron">
+     <h1>Bienvenido {{name}}  </h1>
+
+
+     <div class="pull-right" >
+<button class="btn btn-success mt-4" id="btnlogout">Desloguearse</button>
+     </div>
+
+
+</div>
+ 
+ <div class="container mt-3">
+            <div class="jumbotron">
+                <h1 style="color:blue;">Ingrese datos</h1>
+                <br>
+
+                <form action="/api/productos/guardar" method="POST">
+
+                    <div class="form-group">
+                        <label for="nombre"><b>Nombre</b></label>
+                        <input id="nombre" class="form-control" type="text" name="nombre">
+                    </div>
+                     <div class="form-group">
+                        <label for="precio"><b>Precio</b></label>
+                        <input id="precio" class="form-control" type="text" name="precio">
+                    </div>
+                     <div class="form-group">
+                        <label for="thumbnail"><b>Foto Url </b></label>
+                        <input id="thumbnail" class="form-control" type="text" name="thumbnail">
+                    </div>
+
+                    <button class="btn btn-success mt-3 mb-5">Enviar</button>
+                </form>
+
+
+            </div>
+        </div>
+
+        <script src="js/usuario.js"></script>

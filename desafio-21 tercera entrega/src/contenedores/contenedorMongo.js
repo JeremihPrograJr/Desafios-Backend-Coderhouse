@@ -32,7 +32,7 @@ class MongoCRUD {
     async findAll() {
         let resultado = await this.model.find({})
 
-        return resultado.length <=0 ?{"error":"No hay productos"}:resultado ;
+        return resultado.length <=0 ?{"error":"No hay nada"}:resultado ;
     }
 
 
