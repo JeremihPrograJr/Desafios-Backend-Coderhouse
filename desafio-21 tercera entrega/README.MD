@@ -36,6 +36,14 @@ Para  inciar:
 
 
 
+### vistas
+1.Registro: http://localhost:8080/register
+
+2.Login: http://localhost:8080/login
+
+
+
+
 ### Productos
 1.Guardar: http://localhost:8080/api/productos/guardar
 
