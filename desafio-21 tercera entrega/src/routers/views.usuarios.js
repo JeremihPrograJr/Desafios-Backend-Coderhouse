@@ -2,6 +2,17 @@ const {Router} = require('express')
 const router = Router()
 
 
+
+router.get('/',(req,res) => {
+
+     res.render('index')
+ })
+
+ router.get('/perfil',(req,res) => {
+
+    res.render('perfil_usuario')
+})
+
 router.get('/home',(req,res) => {
    if(!req.session.user) return res.redirect('http://localhost:8080/login')
  // console.log(req.session.user.name)

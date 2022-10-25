@@ -5,7 +5,7 @@ if (formCreateUser){
         let data = new FormData(formCreateUser)
         let obj = {}
         data.forEach((value,key) => obj[key]=value)
-       
+        console.log(obj)
       fetch('/api/user/create',{
         method:"POST",
         headers:{"Content-type":"application/json"},
@@ -20,18 +20,13 @@ if (formCreateUser){
            console.log(json)
            Swal.fire(
             json.error,
-            'You clicked the button!',
+            'Ocurrio un problema al registar el correo!',
             'error'
           )
            //window.location.href = 'failregister'
         }
-         
-
+        
       }).catch(e=>console.log(e))
-
-
-
-
     })
 }
 

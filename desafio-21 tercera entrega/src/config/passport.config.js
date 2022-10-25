@@ -1,3 +1,4 @@
+const { compareSync } = require('bcrypt');
 const passport = require('passport')
 const local = require('passport-local')
 const   {usuarioDao}  =require('../daos/index.js');
@@ -11,16 +12,24 @@ const LocalStrategy = local.Strategy    //local  = username +password  o email +
 
 const initializedPassport = () => {
     passport.use('register',new LocalStrategy({passReqToCallback:true,usernameField:'email'},async(req,email,password,done) => {
+        
         try {
-            const {name,last_name,age,alias}= req.body 
-            if(!email||!name||!last_name||!age||!alias|| !password)return done(null,false)
+            
+            const {name,last_name,age,alias,adress,phone,avatar}= req.body 
+            console.log(req.body)
+            
+            if(!email||!name||!last_name|| !phone || !age||!alias|| !password || !adress)return done(null,false)
             const existe =  await usersService.findEmail({email:email})
+            
             if(existe) return done(null,false)
+            
             let objeto = {
                 email,
                 name,
                 last_name,
+                phone,
                 age,
+                adress,
                 alias,
                 avatar:"",
                 password:createHash(password),
@@ -39,7 +48,7 @@ const initializedPassport = () => {
     })
 
     passport.deserializeUser( async (id,done) => {
-        let resultado = await usersService.findOne({_id:id})
+        let resultado = await usersService.findEmail({_id:id})
         return done(null,resultado)
     })
 }

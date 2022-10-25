@@ -23,7 +23,7 @@ app.use(logger)
 
 app.use(session({
         store:mongoStore.create({
-            mongoUrl:'mongodb+srv://coderhouse:coderhouse@cluster0.kcqoc8j.mongodb.net/ecommerce2?',
+            mongoUrl:'mongodb+srv://coderhouse:coderhouse@cluster0.kcqoc8j.mongodb.net/ecommerce?',
             mongoOptions:{useNewUrlParser:true,useUnifiedTopology:true},
             ttl:1000
         }),
@@ -59,6 +59,7 @@ app.get('/', (req,res) => {
 
 
 //Implementancion de middleware a nivel de aplicacion y me envia un error sobre si una ruta esta erronea.
+/*
 app.use( (req,res,next) => {
         let error = {
                 error: -2,
@@ -69,7 +70,7 @@ app.use( (req,res,next) => {
         next();
 });
 
-
+*/
 
 server.on('error' , (error)=> {
         console.log('Error en el servidor :', error)

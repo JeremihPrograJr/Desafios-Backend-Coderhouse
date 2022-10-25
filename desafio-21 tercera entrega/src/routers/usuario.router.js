@@ -1,16 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const {createHash,isValidPassword} = require('../utils')
+const multer = require('multer')
+const {createHash,isValidPassword,upload} = require('../utils')
 const   {usuarioDao}  =require('../daos/index.js');
 const usersService =usuarioDao
 
-const passport = require('passport')
+const passport = require('passport');
+const { compareSync } = require('bcrypt');
 
-console.log(passport)
 
 
-router.post('/user/create', passport.authenticate('register',{failureRedirect:'/api/registerfail'}),async(req,res)=>{
+
+router.post('/user/create', passport.authenticate('register',{failureRedirect:'/api/registerfail'}),upload.single('avatar'), async(req,res)=>{
     console.log(req.user)
+    
+
     res.send({status:"success",payload:req.user._id})
 })
 

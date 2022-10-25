@@ -17,6 +17,7 @@ class MongoCRUD {
 
  
     async create(data) {
+        console.log(data)
         return this.model.create(data);
     }
 
@@ -34,7 +35,11 @@ class MongoCRUD {
 
         return resultado.length <=0 ?{"error":"No hay nada"}:resultado ;
     }
+    async findEmail(data) {
+        let resultado = await this.model.findOne(data)
 
+        return resultado;
+    }
 
    async update(id, data) {
         //verificamos si existe el carrito
