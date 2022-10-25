@@ -5,6 +5,8 @@ const mongoStore = require('connect-mongo')
 const session = require('express-session')
 const handlebars = require('express-handlebars');
 const passport = require('passport')
+const {logger}=require('./utils')
+
 const initializedPassport = require('./config/passport.config')
 const config = require('./config/database')
 const server = app.listen(config.PUERTO, () => {
@@ -15,6 +17,7 @@ const server = app.listen(config.PUERTO, () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'))
+app.use(logger)
 
 
 

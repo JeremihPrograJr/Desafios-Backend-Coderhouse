@@ -5,9 +5,11 @@ const schema = mongoose.Schema({
     name: { type: String, max: 400 },
     last_name: { type: String, max: 400 },
     age: { type: Number, max: 400 },
+    phone: { type: String, max: 400 },
     alias: { type: String, max:400 },
     avatar: { type: String,max:400} ,
-    password: { type: String,max:500} }
+    password: { type: String,max:500},
+    adress: { type: String,max:500}  }
     ,{timestamps:true});
 
 
