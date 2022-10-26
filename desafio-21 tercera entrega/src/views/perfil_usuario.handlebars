@@ -3,10 +3,12 @@
             <div id="container-fluid">
                 <a class="navbar-brand" href="#" >
                     <i class="fa fa-home " >
-                    Bienvenido: jeremias</i></a>
+                    Bienvenido: {{name}}</i></a>
             </div>
             <div class="ms-auto">
-                <a href="" class="navbar-brand" > <i class="fa fa-window-close" aria-hidden="true"></i> Cerrar session</a>
+                
+
+                <a href="" class="navbar-brand" id="btnlogout"> <i class="fa fa-window-close" aria-hidden="true"></i> Cerrar session</a> 
             </div>
     </nav>
 </div>
@@ -41,24 +43,24 @@
                              <form action="" class="w-75">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1">@</span>
-                                        <input type="text" class="form-control" placeholder="Usuario" aria-label="alias" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" placeholder="Usuario" aria-label="alias" aria-describedby="basic-addon1" value="{{name}}">
                                 </div>
                                 <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" value="{{email}}">
                                         <span class="input-group-text" id="basic-addon2">example@example.com</span>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="name" class="col-sm-2 col-form-label">Nombres</label>
                                     <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="name">
+                                    <input type="text" class="form-control" id="name" value="{{name}}">
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
                                     <label for="last_name" class="col-sm-2 col-form-label">Apellidos</label>
                                     <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="last_name">
+                                    <input type="text" class="form-control" id="last_name" value="{{last_name}}">
                                     </div>
                                 </div>
 
@@ -66,7 +68,7 @@
                                    <div class="mb-3 row">
                                         <label for="age" class="col-sm-2 col-form-label">edad</label>
                                         <div class="col-sm-10">
-                                        <input type="number" class="form-control" id="age">
+                                        <input type="number" class="form-control" id="age" value="{{age}}">
                                         </div>
                                  </div>
 
@@ -75,14 +77,14 @@
                                 <div class="mb-3 row">
                                     <label for="adress" class="col-sm-2 col-form-label">Direccion</label>
                                     <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="adress">
+                                    <input type="text" class="form-control" id="adress" value="{{adress}}">
                                     </div>
                                 </div>
                                 
                                 <div class="mb-3 row">
                                     <label for="phone" class="col-sm-2 col-form-label">Telefono</label>
                                     <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="phone">
+                                    <input type="text" class="form-control" id="phone" value="{{phone}}">
                                     </div>
                                 </div>
 
@@ -117,6 +119,6 @@
 
 </div>
      
-
+ <script src="js/usuario.js"></script>
       
 

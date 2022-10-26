@@ -1,3 +1,4 @@
+const { compareSync } = require('bcrypt')
 const {Router} = require('express')
 const router = Router()
 const {logger}=require('../utils')
@@ -10,21 +11,19 @@ router.get('/',(req,res) => {
      res.render('index')
  })
 
- router.get('/perfil',(req,res) => {
-    /*
-    if(!req.session.user){
-        return res.redirect('http://localhost:8080/login')
-    }
-    */
-    res.render('perfil_usuario')
-})
+ 
 
 router.get('/home',(req,res) => {
    if(!req.session.user){
      return res.redirect('http://localhost:8080/login')
    } 
+    
+    const {email,name,last_name,age,phone,alias,avatar,
+    adress} = req.session.user
 
-    res.render('home',{name:req.session.user.name})
+    res.render('perfil_usuario',{
+       email,name,
+        last_name,age,phone,alias,adress})
 })
 
 router.get('/register',(req,res) => {

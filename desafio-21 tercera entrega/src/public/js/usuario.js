@@ -70,7 +70,7 @@ if(formLogUser){
 }
 
 const btnLogout = document.getElementById('btnlogout')
-
+console.log(btnLogout)
 if(btnLogout){
     console.log(btnLogout)
     btnLogout.addEventListener('click', evt => {
