@@ -5,6 +5,8 @@ const mongoStore = require('connect-mongo')
 const session = require('express-session')
 const handlebars = require('express-handlebars');
 const passport = require('passport')
+const winston = require('winston')
+
 const {logger}=require('./utils')
 
 const initializedPassport = require('./config/passport.config')

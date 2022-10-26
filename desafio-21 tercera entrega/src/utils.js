@@ -17,7 +17,7 @@ const generateProducto = ()=>{
 
 const storage = multer.diskStorage({
     destination:function(req,file,cb){
-        cb(null,__dirname)
+        cb(null,'public')
         
     },filename:function(req,file,cb){
         console.log(file.fieldname)
@@ -30,9 +30,8 @@ const upload= multer({storage})
 
 const debugLogger =winston.createLogger({
         transports:[
-            new winston.transports.File({level:'warn',filename:'./logs/warn.log'}),
-            new winston.transports.File({ level:'error',
-            filename:'./logs/error.log'}),
+            new winston.transports.File({level:'warn',filename:'src/logs/warn.log'}),
+            new winston.transports.File({ level:'error',filename:'src/logs/error.log'}),
         ]
 })
 

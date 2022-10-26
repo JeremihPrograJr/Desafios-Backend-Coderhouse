@@ -31,7 +31,7 @@ const initializedPassport = () => {
                 age,
                 adress,
                 alias,
-                avatar:"",
+                avatar :"",
                 password:createHash(password),
                
             }

@@ -48,8 +48,6 @@ if(formLogUser){
           .then((response)=>response.json())
           .then((json)=>{
             if(json.status === 'success'){
-
-            
             window.location.href = 'home'
             }else{
               console.log('something went wrong :(')
