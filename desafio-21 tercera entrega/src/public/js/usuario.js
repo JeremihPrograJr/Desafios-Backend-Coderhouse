@@ -48,7 +48,7 @@ if(formLogUser){
           .then((response)=>response.json())
           .then((json)=>{
             if(json.status === 'success'){
-            window.location.href = 'home'
+              window.location.href = 'home'
             }else{
               console.log('something went wrong :(')
               console.log(json)
@@ -70,13 +70,19 @@ if(formLogUser){
 }
 
 const btnLogout = document.getElementById('btnlogout')
-console.log(btnLogout)
+
 if(btnLogout){
-    console.log(btnLogout)
     btnLogout.addEventListener('click', evt => {
-        
         fetch('/api/user/logout').then(result => console.log(result.json()))
-        .then(json=> console.log(json))
+        .then(json=> {
+          console.log(json)
+          if(json.status === 'ok'){
+            window.location.href = 'login'
+          }else{
+            console.log('something went wrong :(')
+            console.log(json)
+          }
+        })
         .catch(error => (console.log(error)));
     } )
     

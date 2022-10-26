@@ -33,6 +33,18 @@ Para  inciar:
     id:1
     "productos":[{},{},{}]
 }
+## estructura json usuario
+* {
+	"email": 'hola@gmail.com',
+	"name": 'jeremias',
+	"last_name": 'soto',
+	"age": 2,
+	"phone": '323223',
+	"alias": 'hola',
+	"avatar": '',
+	"password": '$2b$10$VA/by',
+	"adress": 'pto melinka ',
+}
 
 
 
@@ -41,7 +53,7 @@ Para  inciar:
 
 2.Login: http://localhost:8080/login
 
-
+3.Login: http://localhost:8080/home
 
 
 ### Productos

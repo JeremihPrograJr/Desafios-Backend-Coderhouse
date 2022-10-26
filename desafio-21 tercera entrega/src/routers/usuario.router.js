@@ -39,7 +39,7 @@ router.post('/user/login',async (req,res) => {
         return res.status(400).send({status:"error",error:"password incorrecta"})
     }
     req.session.user = user
-    res.send({status:"sucess", payload:user})
+    res.send({status:"success", payload:user})
 
    } catch (error) {
     req.logger.error(`Error en el login : ${error}`)
@@ -61,14 +61,14 @@ router.get('/user/listar',async (req,res)=> {
 })
 
 
-router.get('/user/logout',(req,res) => {
+router.get('/user/logout',  (req,res) => {
     req.session.destroy((err) => {
         if(err){
             req.logger.error(`Ocurrio un problema al deslogear: ${error}`)
         return res.status(500).send({status:"error", payload:"ocurrio un error"})
         }
-        res.send({status:"ok"})
     })
+    res.send({status:"ok"})
     
 })
 

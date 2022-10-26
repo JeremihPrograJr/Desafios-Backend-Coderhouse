@@ -15,7 +15,7 @@ router.get('/',(req,res) => {
 
 router.get('/home',(req,res) => {
    if(!req.session.user){
-     return res.redirect('http://localhost:8080/login')
+     return res.redirect('login')
    } 
     
     const {email,name,last_name,age,phone,alias,avatar,
