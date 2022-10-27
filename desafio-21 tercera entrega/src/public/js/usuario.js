@@ -4,12 +4,20 @@ if (formCreateUser){
         evt.preventDefault()
         let data = new FormData(formCreateUser)
         let obj = {}
-        data.forEach((value,key) => obj[key]=value)
-        console.log(obj)
+
+        const body = new FormData()
+
+        data.forEach((value,key) =>{
+          if(key !== "avatar") body.append(key,value)
+        } )
+        const avatarFile= document.getElementById("avatar").files[0]
+        body.append("avatar",avatarFile)
+        console.log(JSON.stringify(body))
+
       fetch('/api/user/create',{
         method:"POST",
-        headers:{"Content-type":"application/json"},
-        body:JSON.stringify(obj)
+       // headers:{"Content-type":"application/json"},
+        body:body
       })
       .then((response)=>response.json())
       .then((json)=>{

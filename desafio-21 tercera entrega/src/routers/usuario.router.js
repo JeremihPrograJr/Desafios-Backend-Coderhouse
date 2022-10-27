@@ -12,7 +12,7 @@ const { compareSync } = require('bcrypt');
 router.use(logger)
 
 
-router.post('/user/create', passport.authenticate('register',{failureRedirect:'/api/registerfail'}),upload.single('avatar'), async(req,res)=>{
+router.post('/user/create',upload.single('avatar'), passport.authenticate('register',{failureRedirect:'/api/registerfail'}), async(req,res)=>{
     console.log(req.user)
     res.send({status:"success",payload:req.user._id})
 })

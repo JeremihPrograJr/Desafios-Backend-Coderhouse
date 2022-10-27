@@ -12,11 +12,10 @@ const LocalStrategy = local.Strategy    //local  = username +password  o email +
 
 const initializedPassport = () => {
     passport.use('register',new LocalStrategy({passReqToCallback:true,usernameField:'email'},async(req,email,password,done) => {
-        
         try {
-            
             const {name,last_name,age,alias,adress,phone,avatar}= req.body 
-            console.log(req.body)
+            console.log(req.file.fieldname)
+           
             
             if(!email||!name||!last_name|| !phone || !age||!alias|| !password || !adress)return done(null,false)
             const existe =  await usersService.findEmail({email:email})
@@ -31,7 +30,7 @@ const initializedPassport = () => {
                 age,
                 adress,
                 alias,
-                avatar :"",
+                avatar:req.file.fieldname ,
                 password:createHash(password),
                
             }
