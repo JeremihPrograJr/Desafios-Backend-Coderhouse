@@ -14,7 +14,7 @@ const initializedPassport = () => {
     passport.use('register',new LocalStrategy({passReqToCallback:true,usernameField:'email'},async(req,email,password,done) => {
         try {
             const {name,last_name,age,alias,adress,phone,avatar}= req.body 
-            console.log(req.file.fieldname)
+            console.log(req.file)
            
             
             if(!email||!name||!last_name|| !phone || !age||!alias|| !password || !adress)return done(null,false)
@@ -30,7 +30,7 @@ const initializedPassport = () => {
                 age,
                 adress,
                 alias,
-                avatar:req.file.fieldname ,
+                avatar:req.file.filename ,
                 password:createHash(password),
                
             }
