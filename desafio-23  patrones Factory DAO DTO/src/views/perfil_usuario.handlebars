@@ -1,0 +1,129 @@
+<div class="container">
+        <nav class="navbar navbar-expand-lg  bg-light" >
+            <div id="container-fluid">
+                <a class="navbar-brand" href="#" >
+                    <i class="fa fa-home " >
+                    Bienvenido: {{name}}</i></a>
+            </div>
+            <div class="ms-auto">
+                
+
+                <a href="" class="navbar-brand" id="btnlogout"> <i class="fa fa-window-close" aria-hidden="true"></i> Cerrar session</a> 
+            </div>
+    </nav>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3 mt-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="nav flex-column nav-pills" id="nav-tab" role="tablist" aria-orientation="vertical">
+
+                        <a class="nav-link active mb-3 d-flex" id="nav-info-tab" data-bs-toggle="tab" href="#nav-info" role="tab" aria-controls="#nav-info" aria-selected="true">
+                        <span class="icon mr-3">
+                            <i class="fas fa-user"></i> Información</a>
+
+                           <a class="nav-link  mb-3 d-flex" id="nav-order-tab" data-bs-toggle="tab" href="#nav-order" role="tab" aria-controls="nav-order" aria-selected="false">
+                        <span class="icon mr-3">
+                            <i class="fas fa-user"></i> Pedidos</a>
+                     
+                </div>
+             </div>
+          </div>
+     </div>
+
+    <div class="col-md-9">
+        <div class="tab-content" id="nav-tab">
+             <div class="tab-pane fade show active" id="nav-info" role="tabpanel"       aria-labelledby="nav-info-tab">
+                <!--formulario de informacion cliente -->
+                <div class="card p-3   mt-3">
+                    <h2 class="text-center card-title">Información de cliente</h2>
+                         <div class="card-body d-flex justify-content-center">
+                             <form action="" class="w-75">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                        <input type="text" class="form-control" placeholder="Usuario" aria-label="alias" aria-describedby="basic-addon1" value="{{name}}">
+                                </div>
+                                <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" value="{{email}}">
+                                        <span class="input-group-text" id="basic-addon2">example@example.com</span>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="name" class="col-sm-2 col-form-label">Nombres</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="name" value="{{name}}">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="last_name" class="col-sm-2 col-form-label">Apellidos</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="last_name" value="{{last_name}}">
+                                    </div>
+                                </div>
+
+                                
+                                   <div class="mb-3 row">
+                                        <label for="age" class="col-sm-2 col-form-label">edad</label>
+                                        <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="age" value="{{age}}">
+                                        </div>
+                                 </div>
+
+
+
+                                <div class="mb-3 row">
+                                    <label for="adress" class="col-sm-2 col-form-label">Direccion</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="adress" value="{{adress}}">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 row">
+                                    <label for="phone" class="col-sm-2 col-form-label">Telefono</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="phone" value="{{phone}}">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                        <input type="submit" class="btn btn-block btn-primary d-block mx-auto"         value="Guardar datos">
+                                </div>
+                                                
+
+                            </form>
+                        </div>
+                </div>
+                <!--Fin de formulario de informacion cliente-->
+            </div>
+
+            <!--pedidos-->
+            <div class="tab-pane fade show " id="nav-order" role="tabpanel"       aria-labelledby="nav-order-tab">
+                <!--formulario de informacion cliente -->
+                <div class="card p-3   mt-3">
+                    <h2 class="text-center card-title">PEDIDOS</h2>
+                         <div class="card-body d-flex justify-content-center">
+                            <h3> para futura actualizacion</h3>
+                        </div>
+                </div>
+                <!--Fin de formulario de informacion cliente-->
+            </div>
+            <!--fin pedidos-->
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+ {{> footer}}
+
+     
+ <script src="js/usuario.js"></script>
+      
+
