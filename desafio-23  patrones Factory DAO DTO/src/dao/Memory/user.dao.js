@@ -20,3 +20,5 @@ class UserMemory{
     }
 
 }
+
+module.exports = UserMemory
