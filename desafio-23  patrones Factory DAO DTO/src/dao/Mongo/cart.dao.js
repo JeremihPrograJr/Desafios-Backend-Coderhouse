@@ -3,7 +3,7 @@ const CartSchema = require('../../models/cart.model')
 
 class CarDaoMongo extends CRUD{
     constructor(){
-        super('product',CartSchema)
+        super('cart',CartSchema)
     }
 
 }

@@ -9,7 +9,7 @@ const winston = require('winston')
 
 const {logger}=require('./utils')
 
-//const initializedPassport = require('./config/passport.config')
+const initializedPassport = require('./config/passport.config')
 //const config = require('./config/database')
 
 const server = app.listen(8080, () => {
@@ -32,9 +32,9 @@ app.use(session({
         }),
         secret:"pina"
     }))
-//initializedPassport();
-//app.use(passport.initialize());
-//app.use(passport.session());
+initializedPassport();
+app.use(passport.initialize());
+app.use(passport.session());
     
 app.engine('handlebars',handlebars.engine())
 app.set('views',__dirname+'/views')
@@ -46,13 +46,13 @@ app.set('view engine','handlebars')
 
 //const router_productos =require('../src/routers/producto');
 //const router_carrito = require('../src/routers/carrito')
-//const router_usuario = require('../src/routers/usuario.router')
+const router_usuario = require('../src/routers/user.router')
 const router_views = require('../src/routers/view.router')
 
 
 //app.use('/api',router_productos)
 //app.use('/api',router_carrito)
-//app.use('/api',router_usuario)
+app.use('/api',router_usuario)
 app.use('',router_views)
 
 

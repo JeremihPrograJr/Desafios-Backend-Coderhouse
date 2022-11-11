@@ -1,18 +1,31 @@
-const userDao = require('../dao/Memory/user.dao')
+const { initialize } = require('passport')
+const Persistencia = require('../dao/factory')
 
 class UserService {
     constructor(){
-        this.userDao = new userDao
+        this.userDao;
+        this.init();
     }
-    async getUsers (){
-        let resultado = await this.userDao.getAll()
+    async init (){
+        const {user} = await Persistencia.getPersistence();
+        this.userDao=  user 
+    }
+
+
+    async findAll (){
+        let resultado = await this.userDao.findAll()
         return resultado
     }
 
-    async addUser (user){
-        let resultado = await this.userDao.save()
+    async create (user){
+        let resultado = await this.userDao.create(user)
+        return resultado
+    }
+
+    async findByOne (data){
+        let resultado = await this.userDao.findByOne(data)
         return resultado
     }
 }
 
-module.exports = UserService
+module.exports = new UserService ()

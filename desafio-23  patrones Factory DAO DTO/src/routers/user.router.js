@@ -3,8 +3,8 @@ const router = express.Router();
 const multer = require('multer')
 const passport = require('passport');
 const UserController = require('../controllers/user.controller')
+const {upload} = require('../utils')
 
-router.use(logger)
 
 
 router.post('/user/create',upload.single('avatar'), passport.authenticate('register',{failureRedirect:'/api/registerfail'}), async(req,res)=>{

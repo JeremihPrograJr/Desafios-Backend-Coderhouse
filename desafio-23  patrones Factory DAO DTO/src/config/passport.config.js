@@ -1,8 +1,11 @@
 const { compareSync } = require('bcrypt');
 const passport = require('passport')
-const local = require('passport-local')
-const   {usuarioDao}  =require('../daos/index.js');
-const usersService =usuarioDao
+const local = require('passport-local');
+
+const   usersService =require('../services/userService');
+
+console.log("desde passport")
+
 
 const {createHash,isValidPassword}= require('../utils')
 
@@ -14,11 +17,11 @@ const initializedPassport = () => {
     passport.use('register',new LocalStrategy({passReqToCallback:true,usernameField:'email'},async(req,email,password,done) => {
         try {
             const {name,last_name,age,alias,adress,phone,avatar}= req.body 
-            console.log(req.file)
-           
+            
             
             if(!email||!name||!last_name|| !phone || !age||!alias|| !password || !adress)return done(null,false)
             const existe =  await usersService.findByOne({email:email})
+            console.log(existe)
             
             if(existe) return done(null,false)
             
@@ -34,7 +37,10 @@ const initializedPassport = () => {
                 password:createHash(password),
                
             }
-            let resultado = await usersService.create(objeto) 
+            console.log("enviando")
+            console.log(objeto)
+            let resultado = await usersService.create(objeto)
+            
             return done(null,resultado)
         } catch (error) {
             return done(error)

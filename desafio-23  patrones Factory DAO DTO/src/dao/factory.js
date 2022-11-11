@@ -1,4 +1,5 @@
 const config = require('../config/config')
+const MongoClient = require('./Mongo/mongoClient')
 const PERSISTENCE =config.PERSISTENCIA
 
 class Factory{
@@ -8,6 +9,7 @@ class Factory{
             case "MEMORY":
             let userDaoMemoria = await require('./Memory/user.dao')
             console.log("MEMORIA")
+          
             return{ user : new userDaoMemoria() }
             
             case "FILESYSTEM":
@@ -17,7 +19,7 @@ class Factory{
              return new userDaoFileSystem
 
             case "MONGO":
-            console.log("Mongo")
+            const connection = MongoClient.getInstance();
             let userDaoMongo = await require('./Mongo/user.dao')
             let cartDaoMongo = await require('./Mongo/cart.dao')
             let productDaoMongo= await require('./Mongo/product.dao')
