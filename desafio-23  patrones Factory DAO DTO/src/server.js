@@ -56,9 +56,6 @@ const router_views = require('../src/routers/view.router')
 app.use('',router_views)
 
 
-app.get('/', (req,res) => {
-        res.send("home")
-})
 
 
 
