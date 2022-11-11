@@ -18,7 +18,7 @@ const initializedPassport = () => {
            
             
             if(!email||!name||!last_name|| !phone || !age||!alias|| !password || !adress)return done(null,false)
-            const existe =  await usersService.findEmail({email:email})
+            const existe =  await usersService.findByOne({email:email})
             
             if(existe) return done(null,false)
             
@@ -47,7 +47,7 @@ const initializedPassport = () => {
     })
 
     passport.deserializeUser( async (id,done) => {
-        let resultado = await usersService.findEmail({_id:id})
+        let resultado = await usersService.findByOne({_id:id})
         return done(null,resultado)
     })
 }

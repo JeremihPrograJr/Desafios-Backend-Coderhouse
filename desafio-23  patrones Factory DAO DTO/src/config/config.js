@@ -21,7 +21,7 @@ const config = {
     },
     MONGO_URL_DB_LOCAL :process.env.MONGO_URL_DB_LOCAL,
     MONGO_URL_NUBE : process.env.MONGO_URL_NUBE,
-    PERSISTENCIA:process.env.BASE_DATOS,
+    PERSISTENCIA:process.env.BASE_DATOS || "MEMORY",
     PUERTO: process.env.PUERTO,
     producto:'producto',
     carrito:'carrito'
