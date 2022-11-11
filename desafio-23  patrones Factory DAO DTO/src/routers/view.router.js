@@ -1,11 +1,7 @@
-const { compareSync } = require('bcrypt')
 const {Router} = require('express')
 const router = Router()
 const viewController = require('../controllers/view.controller')
-const {logger}=require('../utils')
 
-
-router.use(logger)
 
 
 router.get('/',viewController.INDEX)

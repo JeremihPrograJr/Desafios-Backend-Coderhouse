@@ -1,4 +1,10 @@
 
+const router = require('express').Router()
+const {logger}=require('../utils')
+
+
+router.use(logger)
+
 const INDEX =(req,res) =>{
     res.render('index')
 }
