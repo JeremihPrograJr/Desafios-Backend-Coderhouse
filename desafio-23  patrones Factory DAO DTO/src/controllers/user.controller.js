@@ -1,5 +1,6 @@
 const {createHash,isValidPassword,upload,logger} = require('../utils')
-const   {user}  =require('../dao/factory');
+
+const {user} =require('../dao/factory').getPersistence();
 const usersService =user
 const passport = require('passport');
 const { compareSync } = require('bcrypt');

@@ -5,7 +5,7 @@ class UserMemory{
         this.users =[]
     }
 
-    async save (user){
+    async create (user){
         if (this.users.length === 0){
             user.id =1
         }else{
