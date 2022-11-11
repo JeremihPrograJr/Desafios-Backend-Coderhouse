@@ -9,10 +9,11 @@ const winston = require('winston')
 
 const {logger}=require('./utils')
 
-const initializedPassport = require('./config/passport.config')
-const config = require('./config/database')
-const server = app.listen(config.PUERTO, () => {
-    console.log(`Conectandose al http://localhost:${config.PUERTO} `)
+//const initializedPassport = require('./config/passport.config')
+//const config = require('./config/database')
+
+const server = app.listen(8080, () => {
+    console.log(`Conectandose al http://localhost:${8080} `)
 })
 
 
@@ -31,9 +32,9 @@ app.use(session({
         }),
         secret:"pina"
     }))
-initializedPassport();
-app.use(passport.initialize());
-app.use(passport.session());
+//initializedPassport();
+//app.use(passport.initialize());
+//app.use(passport.session());
     
 app.engine('handlebars',handlebars.engine())
 app.set('views',__dirname+'/views')
@@ -43,16 +44,16 @@ app.set('view engine','handlebars')
 
 
 
-const router_productos =require('../src/routers/producto');
-const router_carrito = require('../src/routers/carrito')
-const router_usuario = require('../src/routers/usuario.router')
-const router_views_usuarios = require('../src/routers/views.usuarios')
+//const router_productos =require('../src/routers/producto');
+//const router_carrito = require('../src/routers/carrito')
+//const router_usuario = require('../src/routers/usuario.router')
+const router_views = require('../src/routers/view.router')
 
 
-app.use('/api',router_productos)
-app.use('/api',router_carrito)
-app.use('/api',router_usuario)
-app.use('',router_views_usuarios)
+//app.use('/api',router_productos)
+//app.use('/api',router_carrito)
+//app.use('/api',router_usuario)
+app.use('',router_views)
 
 
 app.get('/', (req,res) => {
