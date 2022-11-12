@@ -5,8 +5,8 @@ class MongoCRUD {
 
     constructor(collection,schema) {
         this.model = mongoose.model(collection, schema);
-        console.log(collection)
-        console.log(this.model)
+        //console.log(collection)
+        //console.log(this.model)
     }
 
  
@@ -16,7 +16,7 @@ class MongoCRUD {
 
  
     async create(data) {
-        console.log(data)
+        
         return this.model.create(data);
     }
 

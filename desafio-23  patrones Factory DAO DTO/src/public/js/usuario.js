@@ -39,6 +39,48 @@ if (formCreateUser){
 }
 
 
+/*
+const formUpdateUser = document.getElementById('formUpdateUser')
+if (formUpdateUser){
+  formUpdateUser.addEventListener('submit',evt => {
+        evt.preventDefault()
+        let data = new FormData(formUpdateUser)
+        let obj = {}
+
+        const body = new FormData()
+
+        data.forEach((value,key) =>{
+          if(key !== "avatar") body.append(key,value)
+        } )
+        const avatarFile= document.getElementById("avatar").files[0]
+        body.append("avatar",avatarFile)
+        console.log(JSON.stringify(body))
+
+      fetch('/api/user/update',{
+        method:"POST",
+       // headers:{"Content-type":"application/json"},
+        body:body
+      })
+      .then((response)=>response.json())
+      .then((json)=>{
+        if(json.status === 'success'){
+        window.location.href = 'login'
+        }else{
+          console.log('something went wrong :(')
+           console.log(json)
+           Swal.fire(
+            json.error,
+            'Ocurrio un problema al actualizar los datos!',
+            'error'
+          )
+           //window.location.href = 'failregister'
+        }
+        
+      }).catch(e=>console.log(e))
+    })
+}
+*/
+
 const formLogUser = document.getElementById('formLogin')
 if(formLogUser){
     console.log(formLogUser)

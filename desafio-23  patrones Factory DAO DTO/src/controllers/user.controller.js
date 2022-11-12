@@ -51,9 +51,12 @@ const LOGOUT = async(req,res) =>{
 const REGISTERFAIL= (req,res) => {
     res.status(400).send({status:"error",error:"registro fallido"})
 }
-
+const UPDATE= async(req,res) => {
+    //Aun por realizar
+}
 
 module.exports = {LOGIN,
                 GETALL,
                 LOGOUT,
-                REGISTERFAIL}
+                REGISTERFAIL,
+                UPDATE}

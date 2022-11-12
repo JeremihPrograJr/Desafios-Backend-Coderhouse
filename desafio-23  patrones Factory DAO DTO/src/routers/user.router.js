@@ -19,6 +19,7 @@ router.post('/user/login',UserController.LOGIN)
 
 router.get('/user/listar',UserController.GETALL)
 
+router.post('/user/update',UserController.UPDATE)
 
 router.get('/user/logout',UserController.LOGOUT)
 
