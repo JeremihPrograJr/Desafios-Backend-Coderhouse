@@ -1,8 +1,9 @@
 const router = require('express').Router()
-const {cart,product} =require('../services/productService')
+const productos =require('../services/productService')
+const carrito=require('../services/cartService')
+
 const {logger}=require('../utils')
-const productos = product
-const carrito= cart
+
 
 router.use(logger)
 

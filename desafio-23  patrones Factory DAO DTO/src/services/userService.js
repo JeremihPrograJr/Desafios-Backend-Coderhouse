@@ -26,6 +26,20 @@ class UserService {
         let resultado = await this.userDao.findByOne(data)
         return resultado
     }
+
+    async findById (id){
+        let resultado = await this.userDao.findByOne(id)
+        return resultado
+    } 
+    
+    async update (data){
+        let resultado = await this.userDao.update(data)
+        return resultado
+    }
+    async remove (data){
+        let resultado = await this.userDao.remove(data)
+        return resultado
+    }
 }
 
 module.exports = new UserService ()

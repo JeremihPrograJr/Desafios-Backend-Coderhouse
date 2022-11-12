@@ -2,12 +2,12 @@ const Persistencia = require('../dao/factory')
 
 class CartService {
     constructor(){
-        this.userDao;
+        this.cartDao;
         this.init();
     }
     async init (){
         const {cart} = await Persistencia.getPersistence();
-        this.cartDao=  user 
+        this.cartDao=  cart 
     }
 
 
@@ -23,6 +23,18 @@ class CartService {
 
     async findByOne (data){
         let resultado = await this.cartDao.findByOne(data)
+        return resultado
+    }
+    async findById (id){
+        let resultado = await this.cartDao.findById(id)
+        return resultado
+    }
+    async update (data){
+        let resultado = await this.cartDao.update(data)
+        return resultado
+    }
+    async remove (data){
+        let resultado = await this.cartDao.remove(data)
         return resultado
     }
 }

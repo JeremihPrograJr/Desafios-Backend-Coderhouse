@@ -1,8 +1,8 @@
-const {cart,product} =require('../dao/factory').getPersistence();
 const router = require('express').Router()
 const {logger}=require('../utils')
-const carrito = cart
-const productos = product
+const productos =require('../services/productService')
+const carrito=require('../services/cartService')
+
 
 router.use(logger)
 
