@@ -41,9 +41,11 @@ class MongoCRUD {
    async update(id, data) {
         //verificamos si existe
         let resultado =  await this.model.findById(id)
+        
         if (!resultado){
-            return resultado  //enviamos el return(que valor retornado sera undefined o null)
+            return resultado //enviamos el return(que valor retornado sera undefined o null)
         }
+        
         let dato  = await this.model.findOneAndUpdate(
             { _id: id },
             {...data },
@@ -56,7 +58,8 @@ class MongoCRUD {
 
  
      async remove(id) {
-        let resultado = await this.model.findById(id)
+        
+        let resultado = await this.model.findByIdAndDelete(id)
         return resultado
         //return !resultado ? {"error":"No hay producto con esta id"}: this.model.findByIdAndDelete(id);
     }

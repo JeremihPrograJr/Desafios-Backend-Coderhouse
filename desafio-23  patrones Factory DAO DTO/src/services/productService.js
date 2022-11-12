@@ -30,12 +30,13 @@ class ProductService {
         let resultado = await this.productDao.findById(id)
         return resultado
     }
-    async update (data){
-        let resultado = await this.productDao.update(data)
+    async update (id,data){
+        let resultado = await this.productDao.update(id,data)
         return resultado
     }
-    async remove (data){
-        let resultado = await this.productDao.remove(data)
+    async remove (id){
+        
+        let resultado = await this.productDao.remove(id)
         return resultado
     }
 }

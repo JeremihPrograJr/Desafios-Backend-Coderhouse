@@ -23,7 +23,11 @@ const CREATE = async (req,res) => {
 const DELETE = async (req,res) => {
     try {
         let id = req.params.id
+       
         let borrar =await  productos.remove(id)
+        if(!borrar){
+            return res.send({ error:"error",payload:"No existe el producto con esta id"})
+        }
         req.logger.info(`Producto eliminado : ${borrar} `)
         res.send(borrar)
 
@@ -68,7 +72,12 @@ const GET_BY_ID = async (req,res) => {
 const UPDATE = async (req,res) => {
     try {
         let id = req.params.id
+        console.log(req.body)
         let modificar = await productos.update(id,req.body)
+        if (!modificar){
+            return res.send({ error:"error",payload:"Producto no existe"})
+
+        }
         req.logger.info(`Producto modificado : ${modificar} `)
         res.send(modificar)
 
