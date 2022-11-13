@@ -18,10 +18,25 @@ const CREATE  = async (req,res)=>{
     }
 }
 
+const GETALL  = async (req,res)=>{
+        try {
+            let resultado = await carrito.findAll()
+        
+            res.json(resultado)
+    
+            } catch (error) {
+                    req.logger.error(`Error en listar carros : ${error}`)
+                    res.status(500).send(error);
+            }
+    }
+
 const DELETE  = async (req,res)=>{
     try {
         let id = req.params.id
         let eliminar = await carrito.remove(id)
+        if (!eliminar){
+                return res.send({status:"error",payload:"Producto no existe"})
+        }
         req.logger.info(`carrito eliminado : ${eliminar} `)
         res.json(eliminar)
 
@@ -128,4 +143,5 @@ module.exports ={ CREATE,
                   DELETE,
                   UPDATE_PRODUCT_CART,
                   GET_PRODUCT_BY_CART,
-                  DELETE_PRODUCT_CART}
+                  DELETE_PRODUCT_CART,
+                  GETALL}

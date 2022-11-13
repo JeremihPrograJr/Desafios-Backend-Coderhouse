@@ -17,3 +17,11 @@
 {"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"xdsf2323\" (type string) at path \"_id\" for model \"product\""}
 {"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"xdsf2323\" (type string) at path \"_id\" for model \"product\""}
 {"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"xdsf2323\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"No se encontro el carrito"}
+{"level":"error","message":"Error en listar los productos del carro por id : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el producto en el carrito o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
