@@ -1,0 +1,34 @@
+{
+  "name": "desafio-25-graph",
+  "version": "1.0.0",
+  "description": "* Nota: Solo funciona con Mongo ya que se agrego mas cosas, y esta el tema de la session.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.2.1",
+    "apollo-server-express": "^3.11.1",
+    "bcrypt": "^5.1.0",
+    "body": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "graphql": "^16.6.0",
+    "mongoose": "^6.7.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.20",
+    "parser": "^0.1.4",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0",
+    "winston": "^3.8.2"
+  }
+}
