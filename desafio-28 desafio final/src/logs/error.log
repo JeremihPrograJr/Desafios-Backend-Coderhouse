@@ -1,0 +1,27 @@
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: this.userDao.getAll is not a function"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: this.userDao.getAll is not a function"}
+{"level":"error","message":"Error en productos al borrar: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en productos al borrar: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en productos al borrar: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"636fed81e3\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"6\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"2332\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"2332\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"2332\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"2332\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"2332\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"xdsf2323\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"xdsf2323\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Error en productos al actualizar : CastError: Cast to ObjectId failed for value \"xdsf2323\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"No se encontro el carrito"}
+{"level":"error","message":"Error en listar los productos del carro por id : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el producto en el carrito o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}

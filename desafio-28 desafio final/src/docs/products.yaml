@@ -1,0 +1,72 @@
+#Product
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: ObjectId
+          description: Id generada por mongo
+        name:
+          type: string
+          description: Nombre completo del usuario
+        email:
+          type: string
+          description: Correo del usuario, campo unico
+        password:
+          type: string
+          description: Contraseña hasheada del usuario.
+      example:
+        id: ObjectId("assasasa2as1as1asas12")
+        name: veronica
+        email: correovero@gmail.com
+        password: 1asadasdda
+  requestBodies:
+    nuevoProduct:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nombre completo del usuario
+        email:
+          type: string
+          description: Correo del usuario, campo unico
+        password:
+          type: string
+          description: Contraseña se hashea en el servidor
+      example:
+        id: ObjectId("assasasa2as1as1asas12")
+        name: veronica
+        email: correovero@gmail.com
+        password: 1asadasdda
+
+
+paths:
+  /api/product/listar:
+    get:
+      summary: Obtiene todo los productos
+      tags:
+        - Product
+      responses:
+        "200":
+          description: Los usuarios se obtubieron correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    /api/product/create:
+    post:
+      summary: Crea nuevo producto
+      tags:
+        - Product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/nuevoUsuario'
+      responses:
+        "200":
+          description: El usuario se agrego satisfactoriamente
