@@ -18,7 +18,7 @@ const initializedPassport = () => {
         try {
             const {name,last_name,age,alias,adress,phone,avatar}= req.body 
             
-            
+         
             if(!email||!name||!last_name|| !phone || !age||!alias|| !password || !adress)return done(null,false)
             const existe =  await usersService.findByOne({email:email})
             console.log(existe)

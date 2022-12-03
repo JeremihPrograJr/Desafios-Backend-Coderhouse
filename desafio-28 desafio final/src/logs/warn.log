@@ -25,3 +25,10 @@
 {"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
 {"level":"error","message":"No se encontro el producto en el carrito o no existe"}
 {"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}

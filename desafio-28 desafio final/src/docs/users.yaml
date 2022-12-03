@@ -39,11 +39,15 @@ components:
           type: string
           description: Contraseña se hashea en el servidor
       example:
-        id: ObjectId("assasasa2as1as1asas12")
         name: veronica
         email: correovero@gmail.com
-        password: 1asadasdda
-
+        last_name: forte
+        password: 1234d
+        age: 18
+        phone: +569 9803 8545
+        alias: veroBella
+        adress: en el corazon del mundo
+        avatar: debe ser cargado como imagen en postman o por el register
 
 paths:
   /api/user/listar:

@@ -29,10 +29,9 @@ const LOGIN = async(req,res) => {
        }
 }
 const GETALL = async (req,res) =>{
-    
+
     try {
         let resultado= await usersService.findAll()
-        console.log(resultado)
         res.json(resultado)
     } catch (error) {
         req.logger.error(`ocurrio un problema al listar usuarios : ${error}`)

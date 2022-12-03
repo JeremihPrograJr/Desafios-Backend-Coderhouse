@@ -22,7 +22,7 @@ class MongoCRUD {
 
 
     async findById(id) {
-        let data  =  await this.findAll();
+        let data  =  await this.model.findAll();
         let resultado =  data.find((e) => e.id == id);
         return   resultado;
     }
@@ -57,6 +57,11 @@ class MongoCRUD {
     }
 
  
+    async findEmail(email){
+        let resultado = await this.model.findOne(email)
+        return resultado;
+    }
+
      async remove(id) {
         
         let resultado = await this.model.findByIdAndDelete(id)

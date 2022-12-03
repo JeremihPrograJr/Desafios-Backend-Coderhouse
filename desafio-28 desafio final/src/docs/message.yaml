@@ -1,0 +1,69 @@
+#Message
+components:
+  schemas:
+    Messages:
+      type: object
+      properties:
+        id:
+          type: ObjectId
+          description: Id generada por mongo
+        email:
+          type: string
+          description: Email  del usuario
+        Description:
+          type: string
+          description: mensaje del usuario
+        Fecha:
+          type: Date
+          description: generada por mongo
+      example:
+        fecha: Generada por mongo
+        Email: veronica@gmail.com
+        description: 'Hola a todos'
+  requestBodies:
+    NuevoMensaje:
+      type: object
+      properties:
+        email:
+          type: string
+          description: Email del usuario
+        description:
+          type: string
+          description: 'Mensaje del usuario'
+        fecha:
+          type: Date
+          description: Fecha generada por mongo
+      example:
+        email : veronica@gmail.com
+        description : 'Hola como estas'
+
+
+paths:
+  /api/message/read:
+    get:
+      summary: Obtiene todo los mensajes
+      tags:
+        - Messages
+      responses:
+        "200":
+          description: Los mensajes se obtuvieron correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Messages'
+  /api/message/create:
+    post:
+      summary: Crea nuevo mensaje
+      tags:
+        - Messages
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/NuevoMensaje'
+      responses:
+        "200":
+          description: El mensaje se guardo satisfactoriamente

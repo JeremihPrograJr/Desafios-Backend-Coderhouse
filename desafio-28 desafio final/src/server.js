@@ -18,6 +18,7 @@ const cors = require('cors')
 const router_productos =require('../src/routers/product.router');
 const router_carrito = require('../src/routers/cart.router')
 const router_usuario = require('../src/routers/user.router')
+const router_message = require('../src/routers/message.router')
 const router_views = require('../src/routers/view.router')
 
 
@@ -66,6 +67,7 @@ app.use('/api-docs',swaggerUiExpress.serve,swaggerUiExpress.setup(specs))
 app.use('/api',router_productos)
 app.use('/api',router_carrito)
 app.use('/api',router_usuario)
+app.use('/api',router_message)
 app.use('',router_views)
 
 const apolloServer = new ApolloServer({
