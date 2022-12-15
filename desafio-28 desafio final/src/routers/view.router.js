@@ -4,10 +4,10 @@ const viewController = require('../controllers/view.controller')
 
 
 
-router.get('/',viewController.INDEX)
+//router.get('/',viewController.INDEX)
 router.get('/home',viewController.HOME)
 router.get('/register',viewController.REGISTER)
-router.get('/login',viewController.LOGIN)
+router.get('/',viewController.LOGIN)
 
 /*
 router.get('/failregister',(req,res) => {

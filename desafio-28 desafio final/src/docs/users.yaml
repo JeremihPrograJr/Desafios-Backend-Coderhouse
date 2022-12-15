@@ -13,6 +13,9 @@ components:
         last_name:
           type: string
           description: Apellido del usuario
+        cart:
+          type: Array
+          description: Carritos del cliente o un carrito (Puedo pensar que pueden los carritos tener un estado y si el estado es que cambie y al momento de generar una orden, se crea otro carrito )
         email:
           type: string
           description: Correo del usuario, campo unico

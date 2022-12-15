@@ -5,13 +5,15 @@ const {logger}=require('../utils')
 
 router.use(logger)
 
+/*
 const INDEX =(req,res) =>{
-    res.render('index')
+    res.render('/')
 }
+*/
 
 const HOME =(req,res) =>{
     if(!req.session.user){
-        return res.redirect('login')
+        return res.redirect('/')
       } 
        const {email,name,last_name,age,phone,alias,avatar,
        adress} = req.session.user
@@ -37,7 +39,7 @@ const REGISTER =(req,res) => {
     res.render('register')
 }
 module.exports = {
-    INDEX,
+    //INDEX,
     LOGIN,
     HOME,
     REGISTER

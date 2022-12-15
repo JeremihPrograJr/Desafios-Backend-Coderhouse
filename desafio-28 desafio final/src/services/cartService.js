@@ -8,11 +8,14 @@ class CartService {
     async init (){
         const {cart} = await Persistencia.getPersistence();
         this.cartDao=  cart 
+        console.log(cart)
     }
 
 
     async findAll (){
         let resultado = await this.cartDao.findAll()
+
+        //let resultado = await this.cartDao.findAll()
         return resultado
     }
 
@@ -26,7 +29,10 @@ class CartService {
         return resultado
     }
     async findById (id){
+        
+
         let resultado = await this.cartDao.findById(id)
+       
         return resultado
     }
     async update (id,data){

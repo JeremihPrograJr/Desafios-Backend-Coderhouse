@@ -6,16 +6,14 @@ const passport = require('passport');
 const { compareSync } = require('bcrypt');
 
 const LOGIN = async(req,res) => {
-
     try {
         const {email,password} = req.body
-        console.log(email) 
-        console.log(password)
+        
         if(!email || !password) return res.status(400).send({error:"faltan completar datos"})
         
         const user =  await usersService.findByOne({email:email})
         if(!user) return res.status(400).send({status:"error",error:"usuario no encontrado"})
-        console.log(user)
+        
         if (!isValidPassword(user,password)) {
             return res.status(400).send({status:"error",error:"password incorrecta"})
         }

@@ -32,3 +32,89 @@
 {"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
 {"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
 {"level":"error","message":"ocurrio un problema al listar usuarios : TypeError: Cannot read properties of undefined (reading 'findAll')"}
+{"level":"error","message":"Error en productos al guardar : ValidationError: codigo: Path `codigo` (1223) is more than maximum allowed value (400)."}
+{"level":"error","message":"Error en productos al guardar : ValidationError: codigo: Path `codigo` (1231) is more than maximum allowed value (400)."}
+{"level":"error","message":"inicio de session activa : jeremias "}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en listar los productos del carro por id : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en buscar por id el producto : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.cartDao.fi is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : ReferenceError: resultado is not defined"}
+{"level":"error","message":"Error en actualizar los productos del carro : ReferenceError: resultado is not defined"}
+{"level":"error","message":"Error en actualizar los productos del carro : ReferenceError: resultado is not defined"}
+{"level":"error","message":"Error en actualizar los productos del carro : ReferenceError: d is not defined"}
+{"level":"error","message":"Error en actualizar los productos del carro : ReferenceError: d is not defined"}
+{"level":"error","message":"Error en actualizar los productos del carro : ReferenceError: d is not defined"}
+{"level":"error","message":"Error en actualizar los productos del carro : ReferenceError: d is not defined"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en listar carros : ReferenceError: id is not defined"}
+{"level":"error","message":"Error en listar carros : ReferenceError: id is not defined"}
+{"level":"error","message":"Error en listar carros : ReferenceError: id is not defined"}
+{"level":"error","message":"Error en listar carros : ReferenceError: id is not defined"}
+{"level":"error","message":"Error en listar carros : ReferenceError: id is not defined"}
+{"level":"error","message":"Error en listar carros : ReferenceError: id is not defined"}
+{"level":"error","message":"Error en listar carros : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en listar los productos del carro por id : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en listar los productos del carro por id : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en listar los productos del carro por id : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"Error en listar los productos del carro por id : TypeError: this.model.findAll is not a function"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el producto en el carrito o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"Error en actualizar los productos del carro : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en actualizar los productos del carro : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: Cannot read properties of undefined (reading 'name')"}
+{"level":"error","message":"Error en actualizar los productos del carro : TypeError: Cannot read properties of undefined (reading 'name')"}
+{"level":"error","message":"inicio de session activa : jeremias "}

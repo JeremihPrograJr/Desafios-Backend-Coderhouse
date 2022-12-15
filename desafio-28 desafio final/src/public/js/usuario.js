@@ -22,7 +22,7 @@ if (formCreateUser){
       .then((response)=>response.json())
       .then((json)=>{
         if(json.status === 'success'){
-        window.location.href = 'login'
+        window.location.href = '/'
         }else{
           console.log('something went wrong :(')
            console.log(json)
@@ -127,7 +127,7 @@ if(btnLogout){
         .then(json=> {
           console.log(json)
           if(json.status === 'ok'){
-            window.location.href = 'login'
+            window.location.href = '/'
           }else{
             console.log('something went wrong :(')
             console.log(json)

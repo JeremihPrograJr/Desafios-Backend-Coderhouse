@@ -39,6 +39,7 @@ const DELETE = async (req,res) => {
 
 const GETALL = async (req,res) => {
     try {
+        console.log(req.session.user)
         let data = await productos.findAll();
       //  req.logger.info(`Productos listado : ${objeto} `)
         res.send(data);

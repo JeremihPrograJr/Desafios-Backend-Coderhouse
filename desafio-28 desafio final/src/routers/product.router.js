@@ -5,7 +5,7 @@ const productController = require('../controllers/product.controller')
 
 router.post('/productos/guardar', productController.CREATE);
   
-router.get('/productos/listar',productController.GETALL);
+router.get('/productos',productController.GETALL);
 
 router.get('/productos/listar/:id',productController.GET_BY_ID);
 

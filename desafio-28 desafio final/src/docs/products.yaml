@@ -7,56 +7,84 @@ components:
         id:
           type: ObjectId
           description: Id generada por mongo
-        name:
+        nombre:
           type: string
-          description: Nombre completo del usuario
-        email:
+          description: Nombre del producto
+        descripcion:
           type: string
-          description: Correo del usuario, campo unico
-        password:
+          description: descripcion del producto
+        codigo:
+          type: number
+          description: Codigo del producto
+        foto:
           type: string
-          description: Contraseña hasheada del usuario.
+          description: Foto url del producto
+        precio:
+          type: number
+          description: Valor del producto
+        stock:
+          type: number
+          description: stock actual del producto
+        timestamp: 
+          type: date
+          description: fecha de ingreso del producto
+
       example:
         id: ObjectId("assasasa2as1as1asas12")
-        name: veronica
-        email: correovero@gmail.com
-        password: 1asadasdda
+        nombre: calculadora
+        descripcion: de metal
+        codigo: 1231
+        foto: https://img.icons8.com/ios/452/calculator--v1.png
+        precio: 2500
+        stock: 100
+        timestamp: 2022-12-15T00:14:41.920Z
+
   requestBodies:
-    nuevoProduct:
+    nuevoProducto:
       type: object
       properties:
-        name:
+        nombre:
           type: string
-          description: Nombre completo del usuario
-        email:
+          description: Nombre del producto
+        descripcion:
           type: string
-          description: Correo del usuario, campo unico
-        password:
+          description: descripcion del producto
+        codigo:
+          type: number
+          description: Codigo del producto
+        foto:
           type: string
-          description: Contraseña se hashea en el servidor
+          description: Foto url del producto
+        precio:
+          type: number
+          description: Valor del producto
+        stock:
+          type: number
+          description: stock actual del producto
+
       example:
-        id: ObjectId("assasasa2as1as1asas12")
-        name: veronica
-        email: correovero@gmail.com
-        password: 1asadasdda
-
-
+        nombre: calculadora21
+        descripcion: de metal
+        codigo: 1231
+        foto: https://img.icons8.com/ios/452/calculator--v1.png
+        precio: 2500
+        stock: 100
 paths:
-  /api/product/listar:
+  /api/productos:
     get:
       summary: Obtiene todo los productos
       tags:
         - Product
       responses:
         "200":
-          description: Los usuarios se obtubieron correctamente
+          description: Los productos se obtuvieron correctamente
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
-    /api/product/create:
+                  $ref: '#/components/schemas/Product'
+  /api/productos/guardar:
     post:
       summary: Crea nuevo producto
       tags:
@@ -66,7 +94,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/requestBodies/nuevoUsuario'
+              $ref: '#/components/requestBodies/nuevoProducto'
       responses:
         "200":
-          description: El usuario se agrego satisfactoriamente
+          description: El producto se agrego satisfactoriamente

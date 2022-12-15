@@ -1,0 +1,62 @@
+#Cart
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        id:
+          type: ObjectId
+          description: Id generada por mongo
+        Productos:
+          type: Array
+          description: Productos agregado al carrito
+        timestamp:
+          type: date
+          description: fecha en que se creo el carrito
+      example:
+        Id: 639a74f119bf4cd9eec5e0a9
+        productos: []
+        timestamp: '2022-12-15T01:03:37.822Z'
+  requestBodies:
+    NuevoCarrito:
+      type: object
+      properties:
+        productos:
+          type: Array
+          description: PRODUCTOS
+        timpestamp:
+          type: Date
+          description: Fecha generada por mongo
+      example:
+        productos : []
+
+
+paths:
+  /api/carrito/listar:
+    get:
+      summary: Obtiene todo los carritos
+      tags:
+        - Cart
+      responses:
+        "200":
+          description: Los carritos se obtuvieron exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart'
+  /api/carrito:
+    post:
+      summary: Crea nuevo carrito
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/NuevoCarrito'
+      responses:
+        "200":
+          description: El carrito se guardo satisfactoriamente

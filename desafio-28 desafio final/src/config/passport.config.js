@@ -3,8 +3,7 @@ const passport = require('passport')
 const local = require('passport-local');
 
 const   usersService =require('../services/userService');
-
-console.log("desde passport")
+const cartService = require('../services/cartService')
 
 
 const {createHash,isValidPassword}= require('../utils')

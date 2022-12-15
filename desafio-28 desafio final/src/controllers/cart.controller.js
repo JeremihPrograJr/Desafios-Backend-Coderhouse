@@ -19,6 +19,7 @@ const CREATE  = async (req,res)=>{
 }
 
 const GETALL  = async (req,res)=>{
+
         try {
             let resultado = await carrito.findAll()
         
@@ -48,12 +49,18 @@ const DELETE  = async (req,res)=>{
 
 const UPDATE_PRODUCT_CART = async (req,res) => {
     try {
+       
         //obtego las id
         let carritoId  = req.params.id
         let  id_producto = req.body.id_producto
         
+        console.log(carritoId)
+        console.log(id_producto)
         //busco si el carro existe
-        let carro = await carrito.findById(carritoId)
+                        
+        let carro = await carrito.findById(carritoId) 
+                                  
+
         if (!carro){
                 req.logger.error("No se encontro el carrito  o no existe")
                 throw { error: "No se encontro el carrito"};
