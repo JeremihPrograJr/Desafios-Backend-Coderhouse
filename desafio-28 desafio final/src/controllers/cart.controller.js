@@ -19,7 +19,7 @@ const CREATE  = async (req,res)=>{
 }
 
 const GETALL  = async (req,res)=>{
-
+       console.log(req.session.user)
         try {
             let resultado = await carrito.findAll()
         
@@ -33,6 +33,7 @@ const GETALL  = async (req,res)=>{
 
 const DELETE  = async (req,res)=>{
     try {
+        
         let id = req.params.id
         let eliminar = await carrito.remove(id)
         if (!eliminar){

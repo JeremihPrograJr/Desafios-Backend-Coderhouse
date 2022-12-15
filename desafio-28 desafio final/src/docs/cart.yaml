@@ -60,3 +60,37 @@ paths:
       responses:
         "200":
           description: El carrito se guardo satisfactoriamente
+
+    get:
+      tags:
+        - Product
+      summary: Find product by ID
+      description: Returns a single pet
+      operationId: findById
+      parameters:
+        - name: _id
+          in: path
+          description: ID of product to return
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Product not found
+      security:
+        - api_key: []
+        - productstore_auth:
+            - write:products
+            - read:products

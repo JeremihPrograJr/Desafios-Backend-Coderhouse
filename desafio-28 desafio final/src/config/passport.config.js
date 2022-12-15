@@ -23,6 +23,7 @@ const initializedPassport = () => {
             console.log(existe)
             
             if(existe) return done(null,false)
+            let createCart= await cartService.create()
             
             let objeto = {
                 email,
@@ -32,6 +33,7 @@ const initializedPassport = () => {
                 age,
                 adress,
                 alias,
+                cart : createCart._id,
                 avatar:req.file.filename ,
                 password:createHash(password),
                

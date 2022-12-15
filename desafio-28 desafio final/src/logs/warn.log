@@ -118,3 +118,5 @@
 {"level":"error","message":"Error en actualizar los productos del carro : TypeError: Cannot read properties of undefined (reading 'name')"}
 {"level":"error","message":"Error en actualizar los productos del carro : TypeError: Cannot read properties of undefined (reading 'name')"}
 {"level":"error","message":"inicio de session activa : jeremias "}
+{"level":"error","message":"Error en buscar por id el producto : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el producto : ReferenceError: error is not defined"}

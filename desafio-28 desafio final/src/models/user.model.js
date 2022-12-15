@@ -5,6 +5,7 @@ const schema = mongoose.Schema({
     name: { type: String, max: 400 },
     last_name: { type: String, max: 400 },
     age: { type: Number, max: 400 },
+    cart:{type:[],required:true},
     phone: { type: String, max: 400 },
     alias: { type: String, max:400 },
     avatar: { type: String,max:400} ,
