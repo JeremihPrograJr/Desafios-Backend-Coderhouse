@@ -32,11 +32,13 @@ class Factory{
             let cartDaoMongo = await require('./Mongo/cart.dao')
             let productDaoMongo= await require('./Mongo/product.dao')
             let messageDaoMongo= await require('./Mongo/message.dao')
+            let orderDaoMongo= await require('./Mongo/order.dao')
             return {
                 user : new userDaoMongo(),
                 cart: new cartDaoMongo(),
                 product : new productDaoMongo(),
-                message: new messageDaoMongo()
+                message: new messageDaoMongo(),
+                order: new orderDaoMongo()
             }
         }
     }

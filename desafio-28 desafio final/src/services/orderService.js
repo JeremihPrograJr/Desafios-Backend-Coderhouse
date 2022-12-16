@@ -6,8 +6,8 @@ class OrderService {
         this.init();
     }
     async init (){
-        const {cart} = await Persistencia.getPersistence();
-        this.ordertDao=  cart 
+        const {order} = await Persistencia.getPersistence();
+        this.ordertDao=  order 
         console.log(cart)
     }
 

@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router()
-const cartController = require('../controllers/cart.controller')
+const ordertController = require('../controllers/order.controller')
 
 
 //Crear carrito
-router.post('/order' ,cartController.CREATE );
+router.post('/order' ,ordertController.CREATE );
 
 //listar carrito (para pruebas )
-router.get('/order' ,cartController.GETALL );
+router.get('/order' ,ordertController.GETALL );
 
 
 module.exports = router
