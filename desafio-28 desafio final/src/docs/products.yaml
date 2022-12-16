@@ -4,7 +4,7 @@ components:
     Product:
       type: object
       properties:
-        id:
+        _id:
           type: ObjectId
           description: Id generada por mongo
         nombre:
@@ -30,7 +30,7 @@ components:
           description: fecha de ingreso del producto
 
       example:
-        id: ObjectId("assasasa2as1as1asas12")
+        _id: ObjectId("assasasa2as1as1asas12")
         nombre: calculadora
         descripcion: de metal
         codigo: 1231
@@ -84,7 +84,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Product'
-  /api/productos/guardar:
     post:
       summary: Crea nuevo producto
       tags:
@@ -98,7 +97,8 @@ paths:
       responses:
         "200":
           description: El producto se agrego satisfactoriamente
-  /api/productos/listar/{_id}:
+ 
+  /api/productos/{_id}:
     get:
       tags:
         - Product
@@ -127,8 +127,48 @@ paths:
           description: Invalid ID supplied
         '404':
           description: Product not found
-      security:
-        - api_key: []
-        - productstore_auth:
-            - write:products
-            - read:products
+    delete:
+      tags:
+        - Product
+      summary: Delete a product
+      description: delete a product
+      operationId: delete
+      parameters:
+        - name: _id
+          in: path
+          description: product id to delete
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        '400':
+          description: Invalid product value
+    put:
+      tags:
+        - Product
+      summary: Update product
+      description: This update for product.
+      operationId: update
+      parameters:
+        - name: _id
+          in: path
+          description: Product for delete
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Update an existent product in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        default:
+          description: successful operation

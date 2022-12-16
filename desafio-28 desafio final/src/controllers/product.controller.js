@@ -53,7 +53,6 @@ const GET_BY_ID = async (req,res) => {
         
     try {
         let id = req.params.id
-        console.log(id)
         let obtenerProducto = await productos.findById(id)
          
         if (!obtenerProducto){
@@ -73,7 +72,6 @@ const GET_BY_ID = async (req,res) => {
 const UPDATE = async (req,res) => {
     try {
         let id = req.params.id
-        console.log(req.body)
         let modificar = await productos.update(id,req.body)
         if (!modificar){
             return res.send({ error:"error",payload:"Producto no existe"})

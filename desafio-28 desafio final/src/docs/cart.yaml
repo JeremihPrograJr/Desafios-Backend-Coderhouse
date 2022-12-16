@@ -29,10 +29,21 @@ components:
           description: Fecha generada por mongo
       example:
         productos : []
+    NuevoProductoCarrito:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id carrito
+        id_producto:
+          type: string
+          description: Id producto
+      example:
+        id_producto: 'Id del producto'
 
 
 paths:
-  /api/carrito/listar:
+  /api/carrito:
     get:
       summary: Obtiene todo los carritos
       tags:
@@ -46,7 +57,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Cart'
-  /api/carrito:
     post:
       summary: Crea nuevo carrito
       tags:
@@ -60,17 +70,17 @@ paths:
       responses:
         "200":
           description: El carrito se guardo satisfactoriamente
-
+  /api/carrito/{_id}:
     get:
       tags:
-        - Product
-      summary: Find product by ID
-      description: Returns a single pet
+        - Cart
+      summary: Find CART by ID
+      description: Returns a single cart
       operationId: findById
       parameters:
         - name: _id
           in: path
-          description: ID of product to return
+          description: ID of cart to return
           required: true
           schema:
             type: string
@@ -81,16 +91,75 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'          
+                $ref: '#/components/schemas/Cart'          
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: '#/components/schemas/Cart'
         '400':
           description: Invalid ID supplied
         '404':
-          description: Product not found
-      security:
-        - api_key: []
-        - productstore_auth:
-            - write:products
-            - read:products
+          description: Cart not found   
+    delete:
+      tags:
+        - Cart
+      summary: Delete a cart
+      description: delete a cart
+      operationId: delete
+      parameters:
+        - name: _id
+          in: path
+          description: Cart id to delete
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        '400':
+          description: Invalid cart value
+  /api/carrito/{id}/productos:
+    post:
+      summary: Add product to Cart
+      tags:         
+        - Cart
+      parameters:
+        - name: id
+          in: path
+          description: ID of cart to return
+          required: true
+          schema:
+            type: string
+            format: string      
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/NuevoProductoCarrito'
+      responses:
+        "200":
+          description: El producto se guardo satisfactoriamente en el carrito
+  /api/carrito/{id_carro}/productos/{id_producto}:
+    delete:
+      tags:
+        - Cart
+      summary: Delete products (from cart)
+      description: delete a product
+      operationId: delete 
+      parameters:
+        - name: id_carro
+          in: path
+          description: Cart 
+          schema:
+            type: string
+            format: string
+        - name: id_producto
+          in: path
+          description: product id to delete
+          schema:
+            type: string
+            format: string
+      responses:
+        '400':
+          description: Invalid ID cart or product
+        '404':
+          description: cart or product not found

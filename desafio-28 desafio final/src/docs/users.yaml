@@ -104,23 +104,17 @@ paths:
       responses:
         '200':
           description: successful operation
-          headers:
-            X-Rate-Limit:
-              description: calls per hour allowed by the user
-              schema:
-                type: integer
-                format: int32
-            X-Expires-After:
-              description: date in UTC when token expires
-              schema:
-                type: string
-                format: date-time
-          content:
-            application/xml:
-              schema:
-                type: string
-            application/json:
-              schema:
-                type: string
+
         '400':
           description: Invalid username/password supplied
+  /api/user/logout:
+    get:
+      tags:
+        - Users
+      summary: Logs out current logged in user session
+      description: ''
+      operationId: logoutUser
+      parameters: []
+      responses:
+        default:
+          description: successful operation

@@ -2,6 +2,7 @@ const router = require('express').Router()
 const {logger}=require('../utils')
 const productos =require('../services/productService')
 const carrito=require('../services/cartService')
+const cartService = require('../services/cartService')
 
 
 router.use(logger)
@@ -37,7 +38,7 @@ const DELETE  = async (req,res)=>{
         let id = req.params.id
         let eliminar = await carrito.remove(id)
         if (!eliminar){
-                return res.send({status:"error",payload:"Producto no existe"})
+                return res.send({status:"error",payload:"Carrito no existe"})
         }
         req.logger.info(`carrito eliminado : ${eliminar} `)
         res.json(eliminar)
@@ -47,6 +48,30 @@ const DELETE  = async (req,res)=>{
                 res.status(500).send(error);
         }
 }
+
+const GET_CART_BY_ID= async (req,res)=>{
+        try {
+                let id = req.params.id
+                console.log(id)
+                let obtenerCarrito = await cartService.findById(id)
+                 
+                if (!obtenerCarrito){
+                    req.logger.error(`Error en verificar la id del carrito:  ${error}`)
+                    return res.send({status:"error",payload:"Carrito no existe"})
+                    //throw {error:"No se encuentra el carrito  con la id ingresada"}
+                }
+                console.log(obtenerCarrito)
+                    req.logger.info(`carrito listado por id : ${obtenerCarrito} `)
+                res.send(obtenerCarrito)
+        
+            } catch (error) {
+                    req.logger.error(`Error en buscar por id el carrito : ${error}`)
+                    res.status(500).send(error);
+                }
+
+
+}
+
 
 const UPDATE_PRODUCT_CART = async (req,res) => {
     try {
@@ -113,8 +138,10 @@ const GET_PRODUCT_BY_CART =async (req,res) =>{
 const DELETE_PRODUCT_CART = async(req,res)=> {
     try {
                 
-        let id_carrito = req.params.id
-        let id_producto = req.params.id_prod
+        let id_carrito = req.params.id_carro
+        let id_producto = req.params.id_producto
+
+      
         let DataCarrito = await carrito.findById(id_carrito)
 
         if (!DataCarrito ){
@@ -132,8 +159,7 @@ const DELETE_PRODUCT_CART = async(req,res)=> {
         DataCarrito.productos = DataCarrito.productos.filter((el)=> el.id != id_producto)
 
 
-        console.log("id carro " & id_carrito)
-        console.log(DataCarrito)
+  
 
         let respuesta = await carrito.update(id_carrito,DataCarrito)
         req.logger.info(`Se eliminaron  productos con carro id : ${id_carrito} `)
@@ -144,12 +170,29 @@ const DELETE_PRODUCT_CART = async(req,res)=> {
                 req.logger.error(`Error en elimninar productos del carro : ${error}`)
                 res.status(500).send(error);
         }
-
 }
+
+const currenCart = async(req,res)=>{
+        if(!req.session.user){
+                return res.send({status:"error",payload:"Debe iniciar session para agregar productos al carrito"})
+        }else{
+
+                let cartIdUser= req.session.user.cart
+                let ObtenerId= cartIdUser[cartIdUser.length-1]
+                
+                let carrito = await cartService.findById(ObtenerId)
+                console.log(carrito.productos)
+                return res.send(carrito)
+        }
+}
+
 
 module.exports ={ CREATE,
                   DELETE,
+                  GET_CART_BY_ID,
                   UPDATE_PRODUCT_CART,
                   GET_PRODUCT_BY_CART,
                   DELETE_PRODUCT_CART,
-                  GETALL}
+                  GETALL,
+                  currenCart,
+                }

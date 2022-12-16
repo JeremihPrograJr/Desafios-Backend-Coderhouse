@@ -120,3 +120,97 @@
 {"level":"error","message":"inicio de session activa : jeremias "}
 {"level":"error","message":"Error en buscar por id el producto : ReferenceError: error is not defined"}
 {"level":"error","message":"Error en buscar por id el producto : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: obtenerProducto is not defined"}
+{"level":"error","message":"Error en productos al guardar : ValidationError: codigo: Path `codigo` (1231) is more than maximum allowed value (400)."}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito  o no existe"}
+{"level":"error","message":"Error en actualizar los productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito"}
+{"level":"error","message":"Error en elimninar productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito"}
+{"level":"error","message":"Error en elimninar productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito"}
+{"level":"error","message":"Error en elimninar productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el carrito"}
+{"level":"error","message":"Error en elimninar productos del carro : [object Object]"}
+{"level":"error","message":"No se encontro el producto en el carrito o no existe"}
+{"level":"error","message":"Error en elimninar productos del carro : [object Object]"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
