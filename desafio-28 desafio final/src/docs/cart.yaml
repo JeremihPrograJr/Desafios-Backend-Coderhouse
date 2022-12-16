@@ -40,6 +40,17 @@ components:
           description: Id producto
       example:
         id_producto: 'Id del producto'
+    NuevaOrden:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id carrito
+        id_producto:
+          type: string
+          description: Id producto
+      example:
+        id_producto: 'Id del producto'
 
 
 paths:
@@ -163,3 +174,17 @@ paths:
           description: Invalid ID cart or product
         '404':
           description: cart or product not found
+  /api/purchase:
+    post:
+      summary: Crea nueva orden
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/NuevaOrden'
+      responses:
+        "200":
+          description: El carrito se guardo satisfactoriamente

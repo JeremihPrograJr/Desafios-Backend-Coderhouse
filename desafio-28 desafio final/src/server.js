@@ -20,6 +20,7 @@ const router_carrito = require('../src/routers/cart.router')
 const router_usuario = require('../src/routers/user.router')
 const router_message = require('../src/routers/message.router')
 const router_views = require('../src/routers/view.router')
+const router_orden = require('../src/routers/order.router')
 
 
 const initializedPassport = require('./config/passport.config')
@@ -68,6 +69,7 @@ app.use('/api',router_productos)
 app.use('/api',router_carrito)
 app.use('/api',router_usuario)
 app.use('/api',router_message)
+app.use('/api',router_orden)
 app.use('',router_views)
 
 const apolloServer = new ApolloServer({

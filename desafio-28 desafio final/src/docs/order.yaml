@@ -1,0 +1,77 @@
+#Order
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        id:
+          type: ObjectId
+          description: Id generada por mongo
+        email:
+          type: string
+          description: email del usuario
+        fecha:
+          type: string
+          description: cuando se crea la orden
+        numero ordern :
+          type: string
+          description: numero de orden (se va incrementando en 1 en 1)
+        items:
+          type: array
+          description: items del carrito()
+        productos:
+          type: array
+          description: informacion de los productos
+      example:
+        id: ObjectId("assasasa2as1as1asas12")
+        email: veronica@gmail.com
+        fecha:  2022-12-15T23:50:52.478Z
+        numero orden: 1
+        items: []
+        productos: []
+  requestBodies:
+    NuevoMensaje:
+      type: object
+      properties:
+        email:
+          type: string
+          description: Email del usuario
+        description:
+          type: string
+          description: 'Mensaje del usuario'
+        fecha:
+          type: Date
+          description: Fecha generada por mongo
+      example:
+        email : veronica@gmail.com
+        description : 'Hola como estas'
+
+
+paths:
+  /api/order:
+    get:
+      summary: Obtiene todas las ordenes
+      tags:
+        - Order
+      responses:
+        "200":
+          description: Las ordenes se obtuvieron correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+    post:
+      summary: Crea nueva orden 
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/nuevaOrden'
+      responses:
+        "200":
+          description: La orden se agrego satisfactoriamente

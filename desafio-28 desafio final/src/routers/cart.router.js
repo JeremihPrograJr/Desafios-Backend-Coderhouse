@@ -24,6 +24,12 @@ router.post('/carrito/:id/productos' , cartController.UPDATE_PRODUCT_CART);
 router.get ('/carrito/:id/productos', cartController.GET_PRODUCT_BY_CART);
 
 
+//aca ya crea la orden 
+router.post ('/carrito/purchase', cartController.PURCHASE);
+
+
+
+
 //eliminando productos del carrito por el id de carrito y producto
 router.delete('/carrito/:id_carro/productos/:id_producto' ,cartController.DELETE_PRODUCT_CART);
 

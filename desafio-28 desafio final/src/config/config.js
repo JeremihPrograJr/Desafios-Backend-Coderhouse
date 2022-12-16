@@ -1,6 +1,7 @@
 require('dotenv').config();
 console.log(process.env.BASE_DATOS)
 
+
 const config = {
     mysql : {
         client: 'mysql',
@@ -24,7 +25,8 @@ const config = {
     PERSISTENCIA:process.env.BASE_DATOS || "MEMORY",
     PUERTO: process.env.PUERTO,
     producto:'producto',
-    carrito:'carrito'
+    carrito:'carrito',
+    PASSWORD_NODEMAILER: process.env.PASSWORD_NODEMAILER
 
 
 }

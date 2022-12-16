@@ -3,7 +3,9 @@ const {logger}=require('../utils')
 const productos =require('../services/productService')
 const carrito=require('../services/cartService')
 const cartService = require('../services/cartService')
+const orderService= require('../services/orderService')
 
+const mailService= require('../services/mailing')
 
 router.use(logger)
 
@@ -186,6 +188,86 @@ const currenCart = async(req,res)=>{
         }
 }
 
+const PURCHASE  = async (req,res)=>{
+
+        try {
+                const mailer = new mailService()
+                let resultado =  mailer.sendMail({
+                        from:'Recuperaciones <recuperaciones@coderclass.com>',
+                        to:'jeremias.soto23@gmail.com',
+                        subject:"Gracias por la comprra",
+                        html:`<div>
+                        <p>numero orden  </p>
+                        </div>
+                    `
+                        
+                })
+        
+        } catch (error) {       
+                console.log(error)
+        }
+   
+        /*
+        try {
+    
+            if (!req.session.user){
+                mailingService.sendEmail({
+                        from:'Compra@eco.cl',
+                        to:'isskaneki@gmail.com',
+                        subject:"Gracias por la comprra",
+                        html:`<div>
+                        <p>numero orden  </p>
+                        </div>
+                    `
+                        
+                })
+                
+                return res.send({status:"error",payload:"Debe iniciar session para generar la orden"})
+            }else{
+                let cartIdUser= req.session.user.cart
+    
+                //Pensando en que tendria mas carros y siempre el ultimo sera el    carrito
+                let ObtenerId= cartIdUser[cartIdUser.length-1]
+                
+                let carrito = await cartService.findById(ObtenerId)
+                console.log(carrito.productos)
+                //let carritos = await cartService.create({productos:[]})
+                //req.logger.info(`orden Creada : ${carritos} `)
+               // res.json(carritos)
+               let num_orden = await orderService.findAll()
+                console.log(num_orden.length)
+                let crearOrden ={
+                        email:req.session.user.email,
+                        estado:'generada',
+                        numero_orden:num_orden.length == 0 ?1:num_orden.length,
+                        productos:carrito.productos,
+                        items:[]
+                }
+
+                let resultado = await orderService.create(crearOrden)
+
+                mailingService.sendEmail({
+                        from:'Compra@eco.cl',
+                        to:req.session.user.email,
+                        subject:"Gracias por la comprra",
+                        html:`<div>
+                        <p>numero orden ${resultado.numero_orden} </p>
+                        </div>
+                    `
+                        
+                })
+
+               res.send({status:"sucess",payload:resultado})
+            }
+        
+    
+        } catch (error) {
+                req.logger.error(`Error en productos al guardar : ${error}`)
+                res.status(500).send(error);
+        }
+
+        */
+    }
 
 module.exports ={ CREATE,
                   DELETE,
@@ -195,4 +277,5 @@ module.exports ={ CREATE,
                   DELETE_PRODUCT_CART,
                   GETALL,
                   currenCart,
+                  PURCHASE
                 }

@@ -8,7 +8,7 @@ class OrderService {
     async init (){
         const {order} = await Persistencia.getPersistence();
         this.ordertDao=  order 
-        console.log(cart)
+        
     }
 
 

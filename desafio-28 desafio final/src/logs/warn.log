@@ -214,3 +214,16 @@
 {"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
 {"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
 {"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el producto : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en productos al guardar : ValidationError: codigo: Path `codigo` (1231) is more than maximum allowed value (400)."}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en productos al guardar : TypeError: mailingService.sendEmail is not a function"}
+{"level":"error","message":"Error en productos al guardar : ReferenceError: mailingService is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
