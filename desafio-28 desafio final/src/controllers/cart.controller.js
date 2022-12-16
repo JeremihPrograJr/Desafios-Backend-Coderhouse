@@ -189,39 +189,9 @@ const currenCart = async(req,res)=>{
 }
 
 const PURCHASE  = async (req,res)=>{
-
         try {
-                const mailer = new mailService()
-                let resultado =  mailer.sendMail({
-                        from:'Recuperaciones <recuperaciones@coderclass.com>',
-                        to:'jeremias.soto23@gmail.com',
-                        subject:"Gracias por la comprra",
-                        html:`<div>
-                        <p>numero orden  </p>
-                        </div>
-                    `
-                        
-                })
-        
-        } catch (error) {       
-                console.log(error)
-        }
-   
-        /*
-        try {
-    
             if (!req.session.user){
-                mailingService.sendEmail({
-                        from:'Compra@eco.cl',
-                        to:'isskaneki@gmail.com',
-                        subject:"Gracias por la comprra",
-                        html:`<div>
-                        <p>numero orden  </p>
-                        </div>
-                    `
-                        
-                })
-                
+
                 return res.send({status:"error",payload:"Debe iniciar session para generar la orden"})
             }else{
                 let cartIdUser= req.session.user.cart
@@ -230,12 +200,9 @@ const PURCHASE  = async (req,res)=>{
                 let ObtenerId= cartIdUser[cartIdUser.length-1]
                 
                 let carrito = await cartService.findById(ObtenerId)
-                console.log(carrito.productos)
-                //let carritos = await cartService.create({productos:[]})
-                //req.logger.info(`orden Creada : ${carritos} `)
-               // res.json(carritos)
+
                let num_orden = await orderService.findAll()
-                console.log(num_orden.length)
+
                 let crearOrden ={
                         email:req.session.user.email,
                         estado:'generada',
@@ -245,17 +212,21 @@ const PURCHASE  = async (req,res)=>{
                 }
 
                 let resultado = await orderService.create(crearOrden)
+                const mailer = new mailService()
 
-                mailingService.sendEmail({
-                        from:'Compra@eco.cl',
+                let mail =  mailer.sendMail({
+                        from:'Su comprobante de su compra  <recuperaciones@coderclass.com>',
                         to:req.session.user.email,
-                        subject:"Gracias por la comprra",
+                        subject:"Gracias por la compra",
                         html:`<div>
-                        <p>numero orden ${resultado.numero_orden} </p>
+                        <p>Hola :${req.session.user.name}</p>
+                        <p>su numero de compra es :${resultado.numero_orden}</p>
+                        <p>su estado de la orden es :${resultado.estado}</p>
                         </div>
                     `
                         
                 })
+               
 
                res.send({status:"sucess",payload:resultado})
             }
@@ -266,7 +237,7 @@ const PURCHASE  = async (req,res)=>{
                 res.status(500).send(error);
         }
 
-        */
+        
     }
 
 module.exports ={ CREATE,

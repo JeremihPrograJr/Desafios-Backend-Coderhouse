@@ -1,20 +1,22 @@
 const express = require('express');
 const router = express.Router()
 const cartController = require('../controllers/cart.controller')
+const {isAdmin} = require('../middleware/idAdmin')
+
 
 
 //Crear carrito
-router.post('/carrito' ,cartController.CREATE );
+router.post('/carrito' ,cartController.CREATE);
 
 //listar carrito (para pruebas )
-router.get('/carrito' ,cartController.GETALL );
+router.get('/carrito' ,isAdmin,cartController.GETALL );
 
 router.get('/carrito/current' ,cartController.currenCart );
    
 //eliminar carrito 
-router.delete('/carrito/:id' , cartController.DELETE);
+router.delete('/carrito/:id' ,isAdmin,cartController.DELETE,);
 
-router.get('/carrito/:id',cartController.GET_CART_BY_ID)
+router.get('/carrito/:id',isAdmin,cartController.GET_CART_BY_ID)
    
 //actualizar
 router.post('/carrito/:id/productos' , cartController.UPDATE_PRODUCT_CART);

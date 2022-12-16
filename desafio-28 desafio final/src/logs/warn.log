@@ -227,3 +227,14 @@
 {"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
 {"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
 {"level":"error","message":"Error en buscar por id el carrito : ReferenceError: error is not defined"}
+{"level":"error","message":"Error en productos al guardar : ReferenceError: mailer is not defined"}
+{"level":"error","message":"Error en el login : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en el login : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en el login : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en el login : TypeError: user.map is not a function"}
+{"level":"error","message":"Error en el login : TypeError: user.map is not a function"}
+{"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
