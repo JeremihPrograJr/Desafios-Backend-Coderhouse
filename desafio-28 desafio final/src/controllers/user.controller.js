@@ -1,6 +1,7 @@
 const {createHash,isValidPassword,upload,logger} = require('../utils')
 
 const usersService =require('../services/userService')
+const cartService= require('../services/cartService')
 const userDTO = require('../dtos/user.dto')
 
 const passport = require('passport');
@@ -37,7 +38,15 @@ const LOGIN = async(req,res) => {
                 age: user.age
 
              }
+             let cartIdUser= user.cart.toString()
+
+             console.log(cartIdUser)
+             let carro = await cartService.findById(cartIdUser) 
+
+             req.session.cart = carro
              req.session.user= usuario
+             //req.session.cart=cart.productos
+
 
             res.send({status:"success", payload:usuario})
         

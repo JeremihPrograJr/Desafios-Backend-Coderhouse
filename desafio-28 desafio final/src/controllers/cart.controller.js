@@ -107,6 +107,11 @@ const UPDATE_PRODUCT_CART = async (req,res) => {
         //se envia el id del carrito y array (carro.productos)  con el nuevo producto agregado
         let carritos = await carrito.update(carritoId,carro)
 
+        let carrito ={
+
+        }
+        req.session.cart = carritos
+
         req.logger.info(`Se actualizo el carrito con id  : ${carritoId} `)
         res.json(carritos)
 
@@ -178,13 +183,17 @@ const currenCart = async(req,res)=>{
         if(!req.session.user){
                 return res.send({status:"error",payload:"Debe iniciar session para agregar productos al carrito"})
         }else{
+                
 
+
+                /*
                 let cartIdUser= req.session.user.cart
                 let ObtenerId= cartIdUser[cartIdUser.length-1]
                 
                 let carrito = await cartService.findById(ObtenerId)
                 console.log(carrito.productos)
-                return res.send(carrito)
+                */
+                return res.send(req.session.cart)
         }
 }
 
@@ -203,16 +212,55 @@ const PURCHASE  = async (req,res)=>{
 
                let num_orden = await orderService.findAll()
 
+                let productos = req.session.cart.productos
+                
+                let compra = productos.map(elem=>elem.nombre)
+                .reduce((obj,nombre) =>{
+                        if(obj[nombre]){
+                                obj[nombre]=obj[nombre]+1
+                        }else{
+                                obj[nombre]=1
+                        }
+                        return obj
+                },{})
+               
+               
+             
+                
                 let crearOrden ={
                         email:req.session.user.email,
                         estado:'generada',
                         numero_orden:num_orden.length == 0 ?1:num_orden.length,
                         productos:carrito.productos,
-                        items:[]
+                        items:[compra]
                 }
 
                 let resultado = await orderService.create(crearOrden)
                 const mailer = new mailService()
+
+                let message = 
+                        `<table style="border: 1px solid #333;">
+                        <thead>
+                        <tr>
+                          <th>Producto</th>
+                          <th>cantidad</th>
+                        </tr>
+                      </thead>`
+                     
+                      
+                        for (let clave in compra){
+                         message += 
+                           '<tr>' +
+                            '<td>' + clave + '</td>' +
+                            '<td>' + compra[clave] + '</td>' +
+                            
+                          '</tr>'
+                         ;
+                      }
+                      
+                      message +=  '</table>';
+
+                      
 
                 let mail =  mailer.sendMail({
                         from:'Su comprobante de su compra  <recuperaciones@coderclass.com>',
@@ -223,12 +271,15 @@ const PURCHASE  = async (req,res)=>{
                         <p>su numero de compra es :${resultado.numero_orden}</p>
                         <p>su estado de la orden es :${resultado.estado}</p>
                         </div>
-                    `
+
+                    `+message
                         
                 })
+                
                
-
-               res.send({status:"sucess",payload:resultado})
+                       
+               //res.send({status:"sucess",payload:resultado})
+               res.send('ok')
             }
         
     

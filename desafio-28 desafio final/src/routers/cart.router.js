@@ -9,7 +9,7 @@ const {isAdmin} = require('../middleware/idAdmin')
 router.post('/carrito' ,cartController.CREATE);
 
 //listar carrito (para pruebas )
-router.get('/carrito' ,isAdmin,cartController.GETALL );
+router.get('/carrito' ,cartController.GETALL );
 
 router.get('/carrito/current' ,cartController.currenCart );
    

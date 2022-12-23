@@ -7,7 +7,7 @@ const {isAdmin} = require('../middleware/idAdmin')
 
 //router.post('/order' ,ordertController.CREATE );
 
-router.get('/order',isAdmin,ordertController.GETALL );
+router.get('/order',ordertController.GETALL );
 
 
 module.exports = router

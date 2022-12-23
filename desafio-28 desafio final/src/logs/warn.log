@@ -238,3 +238,34 @@
 {"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
 {"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
 {"level":"error","message":"Error en eliminar carro por id  : Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : TypeError: Cannot read properties of undefined (reading 'cart')"}
+{"level":"error","message":"Error en el login : ReferenceError: carrito is not defined"}
+{"level":"error","message":"Error en el login : ReferenceError: carrito is not defined"}
+{"level":"error","message":"Error en el login : ReferenceError: ObtenerId is not defined"}
+{"level":"error","message":"Error en productos al guardar : ValidationError: codigo: Path `codigo` (1231) is more than maximum allowed value (400)."}
+{"level":"error","message":"Error en productos al guardar : TypeError: Cannot read properties of undefined (reading 'casa1!!!')"}
+{"level":"error","message":"Error en productos al guardar : TypeError: Cannot read properties of undefined (reading 'casa1!!!')"}
+{"level":"error","message":"Error en productos al guardar : ReferenceError: array is not defined"}
+{"level":"error","message":"Error en productos al guardar : ReferenceError: array is not defined"}
+{"level":"error","message":"Error en productos al guardar : ReferenceError: array is not defined"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}
+{"level":"error","message":"Error en productos al guardar : TypeError: compra is not iterable"}

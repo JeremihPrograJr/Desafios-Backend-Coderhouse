@@ -3,7 +3,7 @@ const router = express.Router();
 const productController = require('../controllers/product.controller')
 const {isAdmin} = require('../middleware/idAdmin')
 
-router.post('/productos',isAdmin, productController.CREATE);
+router.post('/productos', productController.CREATE);
   
 router.get('/productos',productController.GETALL);
 
